@@ -355,21 +355,25 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-insurance-csv">Dataset: insurance.csv</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning"><strong>Data Cleaning</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data"><strong>Preparing the data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">Data Exploration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-data-for-model-fitting">Prepare the data for model fitting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observe-relationships">Observe relationships</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-and-compare-models"><strong>Train and compare models</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression"><strong>Linear Regression</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-regression"><strong>Random Forest Regression</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-comparison">Performance comparison</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importances-comparison">Feature importances comparison</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-tuning">Model tuning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-model">Building the model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovering-the-relationships">Discovering the relationships</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model"><strong>Training the model</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-performance">Comparing the performance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unveiling-the-feature-importances">Unveiling the feature importances</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-tuning-and-implementation">Model tuning and implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-trained-and-untrained-model">Comparing the trained and untrained model</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-implementation">Model implementation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-and-closing"><strong>Conclusion and Closing</strong></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-and-closing"><strong>Conclusion and Closing</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -382,7 +386,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="predicting-insurance-costs-a-data-science-project">
-<h1><strong>Predicting Insurance Costs: A Data Science Project</strong><a class="headerlink" href="#predicting-insurance-costs-a-data-science-project" title="Link to this heading">#</a></h1>
+<h1><em>Predicting Insurance Costs: A Data Science Project</em><a class="headerlink" href="#predicting-insurance-costs-a-data-science-project" title="Link to this heading">#</a></h1>
 <p>Welcome, and thank you for joining me today.</p>
 <p>This project revolves around a critical question faced by insurance companies: <strong>How can we accurately predict the cost of insurance for customers?</strong> Understanding and predicting insurance costs is essential for businesses in this industry, as it directly impacts pricing strategies, risk assessment, and profitability. A well-designed predictive model not only ensures fair pricing for customers but also helps companies manage financial risks effectively.</p>
 <p>To address this problem, I applied a complete data science workflow. The project involved several key steps: <strong>data cleaning</strong>, where the foundation of any reliable analysis is laid; <strong>model selection and comparison</strong>, to find the most effective predictive techniques; <strong>hyperparameter tuning</strong>, to refine model performance; and finally, <strong>applying the model to new data</strong>, demonstrating its practicality in a real-world context.</p>
@@ -447,6 +451,28 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">insurance_data_path</span> <span class="o">=</span> <span class="s1">&#39;insurance.csv&#39;</span>
 <span class="n">insurance</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">insurance_data_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="preparing-the-data">
+<h2><strong>Preparing the data</strong><a class="headerlink" href="#preparing-the-data" title="Link to this heading">#</a></h2>
+<p>Data preparation is the cornerstone of any successful machine learning project. Here’s how we tackle this important phase:</p>
+<ul class="simple">
+<li><p><strong>Missing Data</strong>: Imputed or removed missing values to ensure the dataset was complete.</p></li>
+<li><p><strong>Normalization</strong>: Scaled numerical variables for consistency across features.</p></li>
+<li><p><strong>Encoding Categorical Variables</strong>: Converted categories into numerical representations suitable for modeling.</p></li>
+</ul>
+<p>This step ensured a clean and robust dataset, ready for analysis and modeling</p>
+</section>
+<section id="data-exploration">
+<h2>Data Exploration<a class="headerlink" href="#data-exploration" title="Link to this heading">#</a></h2>
+<p>Getting to know the database is the first step in the process of reforming it to match the desired criteria.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">insurance_filled</span> <span class="o">=</span> <span class="n">insurance</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
 <span class="n">insurance</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -534,21 +560,92 @@
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="data-cleaning">
-<h2><strong>Data Cleaning</strong><a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h2>
-<p>Data preparation is the cornerstone of any successful machine learning project. Here’s how I addressed this important phase:</p>
-<ul class="simple">
-<li><p><strong>Missing Data</strong>: Imputed or removed missing values to ensure the dataset was complete.</p></li>
-<li><p><strong>Normalization</strong>: Scaled numerical variables for consistency across features.</p></li>
-<li><p><strong>Encoding Categorical Variables</strong>: Converted categories into numerical representations suitable for modeling.</p></li>
-</ul>
-<p>This step ensured a clean and robust dataset, ready for analysis and modeling</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">insurance_filled</span> <span class="o">=</span> <span class="n">insurance</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">insurance</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="n">insurance</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>bmi</th>
+      <th>children</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1272.000000</td>
+      <td>1272.000000</td>
+      <td>1272.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>35.214623</td>
+      <td>30.560550</td>
+      <td>0.948899</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>22.478251</td>
+      <td>6.095573</td>
+      <td>1.303532</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-64.000000</td>
+      <td>15.960000</td>
+      <td>-4.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>24.750000</td>
+      <td>26.180000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>38.000000</td>
+      <td>30.210000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>51.000000</td>
+      <td>34.485000</td>
+      <td>2.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>64.000000</td>
+      <td>53.130000</td>
+      <td>5.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">insurance</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -571,6 +668,161 @@ memory usage: 73.3+ KB
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">insurance</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1338, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">insurance</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>sex</th>
+      <th>bmi</th>
+      <th>children</th>
+      <th>smoker</th>
+      <th>region</th>
+      <th>charges</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1248</th>
+      <td>18.0</td>
+      <td>female</td>
+      <td>39.820</td>
+      <td>0.0</td>
+      <td>no</td>
+      <td>Southeast</td>
+      <td>1633.9618</td>
+    </tr>
+    <tr>
+      <th>786</th>
+      <td>60.0</td>
+      <td>male</td>
+      <td>36.955</td>
+      <td>0.0</td>
+      <td>no</td>
+      <td>Northeast</td>
+      <td>12741.16745</td>
+    </tr>
+    <tr>
+      <th>829</th>
+      <td>39.0</td>
+      <td>male</td>
+      <td>21.850</td>
+      <td>1.0</td>
+      <td>no</td>
+      <td>northwest</td>
+      <td>6117.4945</td>
+    </tr>
+    <tr>
+      <th>508</th>
+      <td>24.0</td>
+      <td>female</td>
+      <td>25.270</td>
+      <td>0.0</td>
+      <td>no</td>
+      <td>Northeast</td>
+      <td>3044.2133</td>
+    </tr>
+    <tr>
+      <th>571</th>
+      <td>18.0</td>
+      <td>female</td>
+      <td>37.290</td>
+      <td>-1.0</td>
+      <td>no</td>
+      <td>Southeast</td>
+      <td>2219.4451</td>
+    </tr>
+    <tr>
+      <th>509</th>
+      <td>57.0</td>
+      <td>woman</td>
+      <td>28.700</td>
+      <td>-0.0</td>
+      <td>no</td>
+      <td>Southwest</td>
+      <td>11455.28</td>
+    </tr>
+    <tr>
+      <th>212</th>
+      <td>24.0</td>
+      <td>male</td>
+      <td>28.500</td>
+      <td>2.0</td>
+      <td>no</td>
+      <td>Northwest</td>
+      <td>3537.703</td>
+    </tr>
+    <tr>
+      <th>1236</th>
+      <td>63.0</td>
+      <td>female</td>
+      <td>21.660</td>
+      <td>0.0</td>
+      <td>no</td>
+      <td>Northeast</td>
+      <td>14449.8544</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>48.0</td>
+      <td>female</td>
+      <td>41.230</td>
+      <td>4.0</td>
+      <td>no</td>
+      <td>Northwest</td>
+      <td>11033.6617</td>
+    </tr>
+    <tr>
+      <th>1278</th>
+      <td>-39.0</td>
+      <td>male</td>
+      <td>29.925</td>
+      <td>1.0</td>
+      <td>yes</td>
+      <td>northeast</td>
+      <td>22462.04375</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="data-cleaning">
+<h2>Data cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h2>
+<p>Once we know the data, we can start adjusting it to our needs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">insurance_filled</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">insurance_filled</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -610,7 +862,6 @@ memory usage: 67.2+ KB
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">insurance_clean</span> <span class="o">=</span> <span class="n">insurance_filled</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
 
-<span class="c1"># I tipically run this a few times to get different samples and see if the data matches my criteria</span>
 <span class="n">insurance_clean</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -645,104 +896,104 @@ memory usage: 67.2+ KB
   </thead>
   <tbody>
     <tr>
-      <th>1237</th>
-      <td>58.0</td>
+      <th>387</th>
+      <td>50.0</td>
+      <td>male</td>
+      <td>25.365</td>
+      <td>2.0</td>
+      <td>False</td>
+      <td>northwest</td>
+      <td>30284.64294</td>
+    </tr>
+    <tr>
+      <th>412</th>
+      <td>26.0</td>
       <td>female</td>
-      <td>28.215</td>
+      <td>17.195</td>
+      <td>2.0</td>
+      <td>True</td>
+      <td>northeast</td>
+      <td>14455.64405</td>
+    </tr>
+    <tr>
+      <th>481</th>
+      <td>49.0</td>
+      <td>male</td>
+      <td>37.510</td>
+      <td>2.0</td>
+      <td>False</td>
+      <td>southeast</td>
+      <td>9304.70190</td>
+    </tr>
+    <tr>
+      <th>872</th>
+      <td>42.0</td>
+      <td>male</td>
+      <td>24.860</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>southeast</td>
+      <td>5966.88740</td>
+    </tr>
+    <tr>
+      <th>495</th>
+      <td>20.0</td>
+      <td>male</td>
+      <td>27.930</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>northeast</td>
+      <td>1967.02270</td>
+    </tr>
+    <tr>
+      <th>771</th>
+      <td>53.0</td>
+      <td>female</td>
+      <td>26.700</td>
+      <td>2.0</td>
+      <td>False</td>
+      <td>southwest</td>
+      <td>11150.78000</td>
+    </tr>
+    <tr>
+      <th>1234</th>
+      <td>45.0</td>
+      <td>female</td>
+      <td>27.830</td>
+      <td>2.0</td>
+      <td>False</td>
+      <td>southeast</td>
+      <td>8515.75870</td>
+    </tr>
+    <tr>
+      <th>749</th>
+      <td>28.0</td>
+      <td>male</td>
+      <td>30.875</td>
       <td>0.0</td>
       <td>False</td>
       <td>northwest</td>
-      <td>12224.35085</td>
+      <td>3062.50825</td>
     </tr>
     <tr>
-      <th>470</th>
-      <td>27.0</td>
-      <td>male</td>
-      <td>32.670</td>
-      <td>0.0</td>
+      <th>230</th>
+      <td>42.0</td>
+      <td>female</td>
+      <td>36.195</td>
+      <td>1.0</td>
       <td>False</td>
-      <td>southeast</td>
-      <td>2497.03830</td>
+      <td>northwest</td>
+      <td>7443.64305</td>
     </tr>
     <tr>
-      <th>813</th>
-      <td>28.0</td>
+      <th>176</th>
+      <td>38.0</td>
       <td>male</td>
-      <td>22.515</td>
+      <td>27.835</td>
       <td>2.0</td>
       <td>False</td>
-      <td>northeast</td>
-      <td>4428.88785</td>
-    </tr>
-    <tr>
-      <th>161</th>
-      <td>18.0</td>
-      <td>female</td>
-      <td>36.850</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>southeast</td>
-      <td>36149.48350</td>
-    </tr>
-    <tr>
-      <th>1220</th>
-      <td>30.0</td>
-      <td>female</td>
-      <td>21.945</td>
-      <td>1.0</td>
-      <td>False</td>
-      <td>northeast</td>
-      <td>4718.20355</td>
-    </tr>
-    <tr>
-      <th>1317</th>
-      <td>18.0</td>
-      <td>male</td>
-      <td>53.130</td>
-      <td>0.0</td>
-      <td>False</td>
-      <td>southeast</td>
-      <td>1163.46270</td>
-    </tr>
-    <tr>
-      <th>1090</th>
-      <td>47.0</td>
-      <td>male</td>
-      <td>36.190</td>
-      <td>0.0</td>
-      <td>True</td>
-      <td>southeast</td>
-      <td>41676.08110</td>
-    </tr>
-    <tr>
-      <th>1275</th>
-      <td>57.0</td>
-      <td>male</td>
-      <td>23.700</td>
-      <td>0.0</td>
-      <td>False</td>
-      <td>southwest</td>
-      <td>10959.33000</td>
-    </tr>
-    <tr>
-      <th>1325</th>
-      <td>61.0</td>
-      <td>male</td>
-      <td>33.535</td>
-      <td>0.0</td>
-      <td>False</td>
-      <td>northeast</td>
-      <td>13143.33665</td>
-    </tr>
-    <tr>
-      <th>1239</th>
-      <td>25.0</td>
-      <td>female</td>
-      <td>42.130</td>
-      <td>1.0</td>
-      <td>False</td>
-      <td>southeast</td>
-      <td>3238.43570</td>
+      <td>northwest</td>
+      <td>6455.86265</td>
     </tr>
   </tbody>
 </table>
@@ -757,7 +1008,7 @@ memory usage: 67.2+ KB
 </div>
 <section id="prepare-the-data-for-model-fitting">
 <h3>Prepare the data for model fitting<a class="headerlink" href="#prepare-the-data-for-model-fitting" title="Link to this heading">#</a></h3>
-<p>Before fitting any machine learning model, it’s essential to ensure that the dataset is properly prepared. This step involves transforming raw data into a clean and structured format that models can effectively interpret. Here’s the approach I followed:</p>
+<p>Before fitting any machine learning model, it’s essential to ensure that the dataset is properly prepared. This step involves transforming raw data into a clean and structured format that models can effectively interpret.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;insurance_clean.csv&quot;</span><span class="p">)</span>
@@ -872,9 +1123,13 @@ memory usage: 67.2+ KB
 </div></div></div>
 </div>
 </section>
-<section id="observe-relationships">
-<h3>Observe relationships<a class="headerlink" href="#observe-relationships" title="Link to this heading">#</a></h3>
-<p>Understanding the relationships between variables is a crucial step in building predictive models. I analyzed correlations between features and the target variable (charges) to identify the most influential predictors. Visual tools such as scatter plots and heatmaps that the only strong relationship was actually found within the “Smoker” variable.</p>
+</section>
+<section id="building-the-model">
+<h2>Building the model<a class="headerlink" href="#building-the-model" title="Link to this heading">#</a></h2>
+<p>Building the model is a process that involves both understanding of the data, and focus towards the desired goals. Choosing the model and the training method is an important decision, that’s why it is important to unveil the hidden connections between the different variables before commiting to use an specific model.</p>
+<section id="discovering-the-relationships">
+<h3>Discovering the relationships<a class="headerlink" href="#discovering-the-relationships" title="Link to this heading">#</a></h3>
+<p>Understanding the relationships between variables is a crucial step in building predictive models. It’s important to analyze the correlations between features and the target variable (charges) to identify the most influential predictors. Visual tools such as scatter plots and heatmaps that the only strong relationship was actually found within the “Smoker” variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
@@ -913,7 +1168,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1c3cfdcb3d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2bd64ad6790&gt;
 </pre></div>
 </div>
 <img alt="_images/8dfc4c5891fa5d150fc9fc97c72a0ebd6f5083fbd43732a8d795509ae62a1bd8.png" src="_images/8dfc4c5891fa5d150fc9fc97c72a0ebd6f5083fbd43732a8d795509ae62a1bd8.png" />
@@ -926,7 +1181,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1c3d09b2810&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2bd64b755d0&gt;
 </pre></div>
 </div>
 <img alt="_images/c2103c383f3ccedd765d9056049cad2d401cc8fe6e7f192e775431572c0cc8b3.png" src="_images/c2103c383f3ccedd765d9056049cad2d401cc8fe6e7f192e775431572c0cc8b3.png" />
@@ -939,7 +1194,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1c3cfaf5f10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2bd648fa010&gt;
 </pre></div>
 </div>
 <img alt="_images/bb6e6ec8e25cb2babb57e95112d783d0e1bf6f43471b0fd9ddb0ea8834d691ca.png" src="_images/bb6e6ec8e25cb2babb57e95112d783d0e1bf6f43471b0fd9ddb0ea8834d691ca.png" />
@@ -952,7 +1207,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1c3cfaf5d90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2bd64625010&gt;
 </pre></div>
 </div>
 <img alt="_images/4930acb1053157f56caa2f78c3d087dd08fd513beb44d241e3ab58d62aa2b927.png" src="_images/4930acb1053157f56caa2f78c3d087dd08fd513beb44d241e3ab58d62aa2b927.png" />
@@ -965,7 +1220,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1c3cfb301d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2bd649b6790&gt;
 </pre></div>
 </div>
 <img alt="_images/091e6bbac269e26925b42473c34c4830ee48b1acfb910729bd26ee1165abb365.png" src="_images/091e6bbac269e26925b42473c34c4830ee48b1acfb910729bd26ee1165abb365.png" />
@@ -978,26 +1233,22 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1c3cfbb8550&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2bd6546a010&gt;
 </pre></div>
 </div>
 <img alt="_images/ad623ef8ce009d74d95ac6ccfc4ad543f6434ee36e1f17a1cc2b56f638260d69.png" src="_images/ad623ef8ce009d74d95ac6ccfc4ad543f6434ee36e1f17a1cc2b56f638260d69.png" />
 </div>
 </div>
 </section>
-</section>
-<section id="train-and-compare-models">
-<h2><strong>Train and compare models</strong><a class="headerlink" href="#train-and-compare-models" title="Link to this heading">#</a></h2>
-<p>To predict insurance costs, I evaluated two models:</p>
-<section id="linear-regression">
-<h3><strong>Linear Regression</strong><a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h3>
+<section id="training-the-model">
+<h3><strong>Training the model</strong><a class="headerlink" href="#training-the-model" title="Link to this heading">#</a></h3>
+<p>To predict insurance costs, we’ll evaluate two models:</p>
+<p><strong>Linear Regression</strong></p>
 <ul class="simple">
 <li><p>A straightforward model to understand relationships in data.</p></li>
 <li><p>Ideal for datasets with linear patterns but may struggle with complex interactions.</p></li>
 </ul>
-</section>
-<section id="random-forest-regression">
-<h3><strong>Random Forest Regression</strong><a class="headerlink" href="#random-forest-regression" title="Link to this heading">#</a></h3>
+<p><strong>Random Forest Regression</strong></p>
 <ul class="simple">
 <li><p>A more sophisticated ensemble method that captures non-linear relationships effectively.</p></li>
 <li><p>While powerful, it requires tuning to avoid overfitting and optimize performance.</p></li>
@@ -1028,7 +1279,7 @@ memory usage: 67.2+ KB
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial test score
 Linear score:0.7049323160872817
-Forest score:0.8259965647238792
+Forest score:0.8234897011546444
 </pre></div>
 </div>
 </div>
@@ -1047,7 +1298,7 @@ Forest score:0.8259965647238792
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross val score - Higher = better
 Linear score:0.7442527809757057
-Forest score:0.8360855568964973
+Forest score:0.8368372883120603
 </pre></div>
 </div>
 </div>
@@ -1066,7 +1317,7 @@ Forest score:0.8360855568964973
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r2 Score - Higher = better
 Linear score:0.7049323160872817
-Forest score:0.8259965647238792
+Forest score:0.8234897011546444
 </pre></div>
 </div>
 </div>
@@ -1084,7 +1335,7 @@ Forest score:0.8259965647238792
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Root Mean Squared Error - Lower = better
 Linear score:6319.54217986643
-Forest score:4852.926393663159
+Forest score:4887.759383359731
 </pre></div>
 </div>
 </div>
@@ -1102,14 +1353,14 @@ Forest score:4852.926393663159
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Absolute Error - Lower = better
 Linear score:4378.723562983686
-Forest score:2834.343831510083
+Forest score:2872.4634980558685
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="performance-comparison">
-<h3>Performance comparison<a class="headerlink" href="#performance-comparison" title="Link to this heading">#</a></h3>
+<section id="comparing-the-performance">
+<h3>Comparing the performance<a class="headerlink" href="#comparing-the-performance" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">linear_y_predict</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">70</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="mi">130</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="mi">180</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">)</span>
@@ -1123,15 +1374,15 @@ Forest score:2834.343831510083
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1c3cfc063d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2bd6490d8d0&gt;
 </pre></div>
 </div>
-<img alt="_images/44fc60259db58eb2e3a405ed89792024d0dbd7839731d8a367dc64c142a67a81.png" src="_images/44fc60259db58eb2e3a405ed89792024d0dbd7839731d8a367dc64c142a67a81.png" />
+<img alt="_images/2d8d2125f9202878499deab49f5faa1ab0706222e1882c46acdbadba024a5a70.png" src="_images/2d8d2125f9202878499deab49f5faa1ab0706222e1882c46acdbadba024a5a70.png" />
 </div>
 </div>
 </section>
-<section id="feature-importances-comparison">
-<h3>Feature importances comparison<a class="headerlink" href="#feature-importances-comparison" title="Link to this heading">#</a></h3>
+<section id="unveiling-the-feature-importances">
+<h3>Unveiling the feature importances<a class="headerlink" href="#unveiling-the-feature-importances" title="Link to this heading">#</a></h3>
 <p>To understand which factors significantly influence insurance costs, I compared feature importances derived from the models. For this, the forest model seemed to spot weaker but relevant relationships on the variables “BMI” and “Age”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1185,12 +1436,13 @@ Forest score:2834.343831510083
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4f269e49fe8a6c4bc7e742beb7001daac371660c07f2403c12722e8a51631cd9.png" src="_images/4f269e49fe8a6c4bc7e742beb7001daac371660c07f2403c12722e8a51631cd9.png" />
+<img alt="_images/75db99408a5322467b6aa44a7c473fb181e542df2e4d87803dd35b730e1de872.png" src="_images/75db99408a5322467b6aa44a7c473fb181e542df2e4d87803dd35b730e1de872.png" />
 </div>
 </div>
 </section>
-<section id="model-tuning">
-<h3>Model tuning<a class="headerlink" href="#model-tuning" title="Link to this heading">#</a></h3>
+</section>
+<section id="model-tuning-and-implementation">
+<h2>Model tuning and implementation<a class="headerlink" href="#model-tuning-and-implementation" title="Link to this heading">#</a></h2>
 <p>After identifying Random Forest Regression as the best-performing model, I focused on tuning its hyperparameters to maximize predictive accuracy. Key parameters like the number of trees, maximum depth, and minimum samples per leaf were adjusted using grid search and cross-validation. This process helped refine the model, reducing overfitting and improving its ability to generalize to new data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1211,12 +1463,12 @@ Forest score:2834.343831510083
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> 
 <span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\sklearn\base.py:1473,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\base.py:1473,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1466</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
 <span class="g g-Whitespace">   </span><span class="mi">1468</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
 <span class="g g-Whitespace">   </span><span class="mi">1469</span>     <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
@@ -1225,7 +1477,7 @@ Forest score:2834.343831510083
 <span class="g g-Whitespace">   </span><span class="mi">1472</span> <span class="p">):</span>
 <span class="ne">-&gt; </span><span class="mi">1473</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\sklearn\model_selection\_search.py:1019,</span> in <span class="ni">BaseSearchCV.fit</span><span class="nt">(self, X, y, **params)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\model_selection\_search.py:1019,</span> in <span class="ni">BaseSearchCV.fit</span><span class="nt">(self, X, y, **params)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1013</span>     <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format_results</span><span class="p">(</span>
 <span class="g g-Whitespace">   </span><span class="mi">1014</span>         <span class="n">all_candidate_params</span><span class="p">,</span> <span class="n">n_splits</span><span class="p">,</span> <span class="n">all_out</span><span class="p">,</span> <span class="n">all_more_results</span>
 <span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="p">)</span>
@@ -1235,12 +1487,12 @@ Forest score:2834.343831510083
 <span class="g g-Whitespace">   </span><span class="mi">1022</span> <span class="c1"># self.scoring the return type is only known after calling</span>
 <span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="n">first_test_score</span> <span class="o">=</span> <span class="n">all_out</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;test_scores&quot;</span><span class="p">]</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\sklearn\model_selection\_search.py:1573,</span> in <span class="ni">GridSearchCV._run_search</span><span class="nt">(self, evaluate_candidates)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\model_selection\_search.py:1573,</span> in <span class="ni">GridSearchCV._run_search</span><span class="nt">(self, evaluate_candidates)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1571</span> <span class="k">def</span> <span class="nf">_run_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">evaluate_candidates</span><span class="p">):</span>
 <span class="g g-Whitespace">   </span><span class="mi">1572</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Search all candidates in param_grid&quot;&quot;&quot;</span>
 <span class="ne">-&gt; </span><span class="mi">1573</span>     <span class="n">evaluate_candidates</span><span class="p">(</span><span class="n">ParameterGrid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">param_grid</span><span class="p">))</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\sklearn\model_selection\_search.py:965,</span> in <span class="ni">BaseSearchCV.fit.&lt;locals&gt;.evaluate_candidates</span><span class="nt">(candidate_params, cv, more_results)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\model_selection\_search.py:965,</span> in <span class="ni">BaseSearchCV.fit.&lt;locals&gt;.evaluate_candidates</span><span class="nt">(candidate_params, cv, more_results)</span>
 <span class="g g-Whitespace">    </span><span class="mi">957</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">958</span>     <span class="nb">print</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">959</span>         <span class="s2">&quot;Fitting </span><span class="si">{0}</span><span class="s2"> folds for each of </span><span class="si">{1}</span><span class="s2"> candidates,&quot;</span>
@@ -1272,7 +1524,7 @@ Forest score:2834.343831510083
 <span class="g g-Whitespace">    </span><span class="mi">987</span>         <span class="s2">&quot;Were there no candidates?&quot;</span>
 <span class="g g-Whitespace">    </span><span class="mi">988</span>     <span class="p">)</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\sklearn\utils\parallel.py:74,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\utils\parallel.py:74,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
 <span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">70</span> <span class="n">iterable_with_config</span> <span class="o">=</span> <span class="p">(</span>
 <span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="p">(</span><span class="n">_with_config</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">),</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
@@ -1280,7 +1532,7 @@ Forest score:2834.343831510083
 <span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="p">)</span>
 <span class="ne">---&gt; </span><span class="mi">74</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config</span><span class="p">)</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\joblib\parallel.py:1918,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\joblib\parallel.py:1918,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1916</span>     <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_sequential_output</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1917</span>     <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 <span class="ne">-&gt; </span><span class="mi">1918</span>     <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
@@ -1291,19 +1543,19 @@ Forest score:2834.343831510083
 <span class="g g-Whitespace">   </span><span class="mi">1924</span> <span class="c1"># callback.</span>
 <span class="g g-Whitespace">   </span><span class="mi">1925</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\joblib\parallel.py:1847,</span> in <span class="ni">Parallel._get_sequential_output</span><span class="nt">(self, iterable)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\joblib\parallel.py:1847,</span> in <span class="ni">Parallel._get_sequential_output</span><span class="nt">(self, iterable)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1845</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_dispatched_batches</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="g g-Whitespace">   </span><span class="mi">1846</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_dispatched_tasks</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="ne">-&gt; </span><span class="mi">1847</span> <span class="n">res</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1848</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_completed_tasks</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="g g-Whitespace">   </span><span class="mi">1849</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_progress</span><span class="p">()</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\sklearn\utils\parallel.py:136,</span> in <span class="ni">_FuncWrapper.__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\utils\parallel.py:136,</span> in <span class="ni">_FuncWrapper.__call__</span><span class="nt">(self, *args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span><span class="o">**</span><span class="n">config</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">136</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\sklearn\model_selection\_validation.py:888,</span> in <span class="ni">_fit_and_score</span><span class="nt">(estimator, X, y, scorer, train, test, verbose, parameters, fit_params, score_params, return_train_score, return_parameters, return_n_test_samples, return_times, return_estimator, split_progress, candidate_progress, error_score)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\model_selection\_validation.py:888,</span> in <span class="ni">_fit_and_score</span><span class="nt">(estimator, X, y, scorer, train, test, verbose, parameters, fit_params, score_params, return_train_score, return_parameters, return_n_test_samples, return_times, return_estimator, split_progress, candidate_progress, error_score)</span>
 <span class="g g-Whitespace">    </span><span class="mi">886</span>         <span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">887</span>     <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">888</span>         <span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">)</span>
@@ -1311,7 +1563,7 @@ Forest score:2834.343831510083
 <span class="g g-Whitespace">    </span><span class="mi">891</span>     <span class="c1"># Note fit time as time until error</span>
 <span class="g g-Whitespace">    </span><span class="mi">892</span>     <span class="n">fit_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\sklearn\base.py:1473,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\base.py:1473,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1466</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
 <span class="g g-Whitespace">   </span><span class="mi">1468</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
 <span class="g g-Whitespace">   </span><span class="mi">1469</span>     <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
@@ -1320,8 +1572,12 @@ Forest score:2834.343831510083
 <span class="g g-Whitespace">   </span><span class="mi">1472</span> <span class="p">):</span>
 <span class="ne">-&gt; </span><span class="mi">1473</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\sklearn\ensemble\_forest.py:489,</span> in <span class="ni">BaseForest.fit</span><span class="nt">(self, X, y, sample_weight)</span>
-<span class="g g-Whitespace">    </span><span class="mi">478</span> <span class="n">trees</span> <span class="o">=</span> <span class="p">[</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\ensemble\_forest.py:478,</span> in <span class="ni">BaseForest.fit</span><span class="nt">(self, X, y, sample_weight)</span>
+<span class="g g-Whitespace">    </span><span class="mi">473</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">warm_start</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">474</span>     <span class="c1"># We draw from the random state to get the random state we</span>
+<span class="g g-Whitespace">    </span><span class="mi">475</span>     <span class="c1"># would have got if we hadn&#39;t used a warm_start.</span>
+<span class="g g-Whitespace">    </span><span class="mi">476</span>     <span class="n">random_state</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">MAX_INT</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">478</span> <span class="n">trees</span> <span class="o">=</span> <span class="p">[</span>
 <span class="g g-Whitespace">    </span><span class="mi">479</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_make_estimator</span><span class="p">(</span><span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
 <span class="nn">    480     for i</span> in <span class="ni">range</span><span class="nt">(n_more_estimators)</span>
 <span class="g g-Whitespace">    </span><span class="mi">481</span> <span class="p">]</span>
@@ -1331,66 +1587,155 @@ Forest score:2834.343831510083
 <span class="g g-Whitespace">    </span><span class="mi">486</span> <span class="c1"># that case. However, for joblib 0.12+ we respect any</span>
 <span class="g g-Whitespace">    </span><span class="mi">487</span> <span class="c1"># parallel_backend contexts set at a higher level,</span>
 <span class="g g-Whitespace">    </span><span class="mi">488</span> <span class="c1"># since correctness does not rely on using threads.</span>
-<span class="ne">--&gt; </span><span class="mi">489</span> <span class="n">trees</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">489</span> <span class="n">trees</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">490</span>     <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">verbose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">492</span>     <span class="n">prefer</span><span class="o">=</span><span class="s2">&quot;threads&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span> <span class="p">)(</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_parallel_build_trees</span><span class="p">)(</span>
-<span class="g g-Whitespace">    </span><span class="mi">495</span>         <span class="n">t</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="bp">self</span><span class="o">.</span><span class="n">bootstrap</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">497</span>         <span class="n">X</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span>         <span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">499</span>         <span class="n">sample_weight</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">500</span>         <span class="n">i</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span>         <span class="nb">len</span><span class="p">(</span><span class="n">trees</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span>         <span class="n">verbose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span>         <span class="n">class_weight</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">class_weight</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span>         <span class="n">n_samples_bootstrap</span><span class="o">=</span><span class="n">n_samples_bootstrap</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">505</span>         <span class="n">missing_values_in_feature_mask</span><span class="o">=</span><span class="n">missing_values_in_feature_mask</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">506</span>     <span class="p">)</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="nn">    507     for i, t</span> in <span class="ni">enumerate</span><span class="nt">(trees)</span>
 <span class="g g-Whitespace">    </span><span class="mi">508</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span> <span class="c1"># Collect newly grown trees</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">trees</span><span class="p">)</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\sklearn\utils\parallel.py:74,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span> <span class="n">iterable_with_config</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="p">(</span><span class="n">_with_config</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">),</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">74</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config</span><span class="p">)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\ensemble\_forest.py:479,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">473</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">warm_start</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">474</span>     <span class="c1"># We draw from the random state to get the random state we</span>
+<span class="g g-Whitespace">    </span><span class="mi">475</span>     <span class="c1"># would have got if we hadn&#39;t used a warm_start.</span>
+<span class="g g-Whitespace">    </span><span class="mi">476</span>     <span class="n">random_state</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">MAX_INT</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">478</span> <span class="n">trees</span> <span class="o">=</span> <span class="p">[</span>
+<span class="ne">--&gt; </span><span class="mi">479</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_make_estimator</span><span class="p">(</span><span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
+<span class="nn">    480     for i</span> in <span class="ni">range</span><span class="nt">(n_more_estimators)</span>
+<span class="g g-Whitespace">    </span><span class="mi">481</span> <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">483</span> <span class="c1"># Parallel loop: we prefer the threading backend as the Cython code</span>
+<span class="g g-Whitespace">    </span><span class="mi">484</span> <span class="c1"># for fitting the trees is internally releasing the Python GIL</span>
+<span class="g g-Whitespace">    </span><span class="mi">485</span> <span class="c1"># making threading more efficient than multiprocessing in</span>
+<span class="g g-Whitespace">    </span><span class="mi">486</span> <span class="c1"># that case. However, for joblib 0.12+ we respect any</span>
+<span class="g g-Whitespace">    </span><span class="mi">487</span> <span class="c1"># parallel_backend contexts set at a higher level,</span>
+<span class="g g-Whitespace">    </span><span class="mi">488</span> <span class="c1"># since correctness does not rely on using threads.</span>
+<span class="g g-Whitespace">    </span><span class="mi">489</span> <span class="n">trees</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span>     <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">verbose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="nn">    507     for i, t</span> in <span class="ni">enumerate</span><span class="nt">(trees)</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span> <span class="p">)</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\joblib\parallel.py:2007,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2001</span> <span class="c1"># The first item from the output is blank, but it makes the interpreter</span>
-<span class="g g-Whitespace">   </span><span class="mi">2002</span> <span class="c1"># progress until it enters the Try/Except block of the generator and</span>
-<span class="g g-Whitespace">   </span><span class="mi">2003</span> <span class="c1"># reaches the first `yield` statement. This starts the asynchronous</span>
-<span class="g g-Whitespace">   </span><span class="mi">2004</span> <span class="c1"># dispatch of the tasks to the workers.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2005</span> <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2007</span> <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\ensemble\_base.py:145,</span> in <span class="ni">BaseEnsemble._make_estimator</span><span class="nt">(self, append, random_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="k">def</span> <span class="nf">_make_estimator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Make and configure a copy of the `estimator_` attribute.</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span><span class="sd">     Warning: This method should be used to properly instantiate new</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span><span class="sd">     sub-estimators.</span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">145</span>     <span class="n">estimator</span> <span class="o">=</span> <span class="n">clone</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">146</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">p</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator_params</span><span class="p">})</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span>     <span class="k">if</span> <span class="n">random_state</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\joblib\parallel.py:1650,</span> in <span class="ni">Parallel._get_outputs</span><span class="nt">(self, iterator, pre_dispatch)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1647</span>     <span class="k">yield</span>
-<span class="g g-Whitespace">   </span><span class="mi">1649</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">retrieval_context</span><span class="p">():</span>
-<span class="ne">-&gt; </span><span class="mi">1650</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_retrieve</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1652</span> <span class="k">except</span> <span class="ne">GeneratorExit</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1653</span>     <span class="c1"># The generator has been garbage collected before being fully</span>
-<span class="g g-Whitespace">   </span><span class="mi">1654</span>     <span class="c1"># consumed. This aborts the remaining tasks if possible and warn</span>
-<span class="g g-Whitespace">   </span><span class="mi">1655</span>     <span class="c1"># the user if necessary.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1656</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\base.py:90,</span> in <span class="ni">clone</span><span class="nt">(estimator, safe)</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Construct a new unfitted estimator with the same parameters.</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span><span class="sd"> Clone does a deep copy of the model in an estimator</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span><span class="sd"> False</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="s2">&quot;__sklearn_clone__&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isclass</span><span class="p">(</span><span class="n">estimator</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">90</span>     <span class="k">return</span> <span class="n">estimator</span><span class="o">.</span><span class="n">__sklearn_clone__</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span> <span class="k">return</span> <span class="n">_clone_parametrized</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">safe</span><span class="o">=</span><span class="n">safe</span><span class="p">)</span>
 
-<span class="nn">File ~\Documents\Projects\Analysis - Healthcare\venv\Lib\site-packages\joblib\parallel.py:1762,</span> in <span class="ni">Parallel._retrieve</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1757</span> <span class="c1"># If the next job is not ready for retrieval yet, we just wait for</span>
-<span class="g g-Whitespace">   </span><span class="mi">1758</span> <span class="c1"># async callbacks to progress.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1759</span> <span class="k">if</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span>
-<span class="g g-Whitespace">   </span><span class="mi">1760</span>     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1761</span>         <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span> <span class="o">==</span> <span class="n">TASK_PENDING</span><span class="p">)):</span>
-<span class="ne">-&gt; </span><span class="mi">1762</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1763</span>     <span class="k">continue</span>
-<span class="g g-Whitespace">   </span><span class="mi">1765</span> <span class="c1"># We need to be careful: the job list can be filling up as</span>
-<span class="g g-Whitespace">   </span><span class="mi">1766</span> <span class="c1"># we empty it and Python list are not thread-safe by</span>
-<span class="g g-Whitespace">   </span><span class="mi">1767</span> <span class="c1"># default hence the use of the lock</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\base.py:296,</span> in <span class="ni">BaseEstimator.__sklearn_clone__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span> <span class="k">def</span> <span class="nf">__sklearn_clone__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">296</span>     <span class="k">return</span> <span class="n">_clone_parametrized</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\base.py:121,</span> in <span class="ni">_clone_parametrized</span><span class="nt">(estimator, safe)</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span>             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>                 <span class="s2">&quot;Cannot clone object &#39;</span><span class="si">%s</span><span class="s2">&#39; (type </span><span class="si">%s</span><span class="s2">): &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>                 <span class="s2">&quot;it does not seem to be a scikit-learn &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span>                 <span class="s2">&quot;estimator as it does not implement a &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span>                 <span class="s2">&quot;&#39;get_params&#39; method.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">estimator</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">estimator</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span> <span class="n">klass</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="vm">__class__</span>
+<span class="ne">--&gt; </span><span class="mi">121</span> <span class="n">new_object_params</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">new_object_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="n">new_object_params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">clone</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">safe</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\base.py:243,</span> in <span class="ni">BaseEstimator.get_params</span><span class="nt">(self, deep)</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span><span class="sd"> Get parameters for this estimator.</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span><span class="sd">     Parameter names mapped to their values.</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">242</span> <span class="n">out</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">243</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_param_names</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span>     <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span>     <span class="k">if</span> <span class="n">deep</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">&quot;get_params&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\base.py:208,</span> in <span class="ni">BaseEstimator._get_param_names</span><span class="nt">(cls)</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>     <span class="k">return</span> <span class="p">[]</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="c1"># introspect the constructor arguments to find the model parameters</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="c1"># to represent</span>
+<span class="ne">--&gt; </span><span class="mi">208</span> <span class="n">init_signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span> <span class="c1"># Consider the constructor parameters excluding &#39;self&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="n">parameters</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span>     <span class="n">p</span>
+<span class="nn">    212     for p</span> in <span class="ni">init_signature.parameters.values</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;self&quot;</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">kind</span> <span class="o">!=</span> <span class="n">p</span><span class="o">.</span><span class="n">VAR_KEYWORD</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span> <span class="p">]</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:3272,</span> in <span class="ni">signature</span><span class="nt">(obj, follow_wrapped, globals, locals, eval_str)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3270</span> <span class="k">def</span> <span class="nf">signature</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">follow_wrapped</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">globals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eval_str</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3271</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Get a signature object for the passed callable.&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">3272</span>     <span class="k">return</span> <span class="n">Signature</span><span class="o">.</span><span class="n">from_callable</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">follow_wrapped</span><span class="o">=</span><span class="n">follow_wrapped</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3273</span>                                    <span class="nb">globals</span><span class="o">=</span><span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="nb">locals</span><span class="p">,</span> <span class="n">eval_str</span><span class="o">=</span><span class="n">eval_str</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:3020,</span> in <span class="ni">Signature.from_callable</span><span class="nt">(cls, obj, follow_wrapped, globals, locals, eval_str)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3016</span> <span class="nd">@classmethod</span>
+<span class="g g-Whitespace">   </span><span class="mi">3017</span> <span class="k">def</span> <span class="nf">from_callable</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3018</span>                   <span class="n">follow_wrapped</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">globals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eval_str</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3019</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Constructs Signature for the given callable object.&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">3020</span>     <span class="k">return</span> <span class="n">_signature_from_callable</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">sigcls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3021</span>                                     <span class="n">follow_wrapper_chains</span><span class="o">=</span><span class="n">follow_wrapped</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3022</span>                                     <span class="nb">globals</span><span class="o">=</span><span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="nb">locals</span><span class="p">,</span> <span class="n">eval_str</span><span class="o">=</span><span class="n">eval_str</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:2507,</span> in <span class="ni">_signature_from_callable</span><span class="nt">(obj, follow_wrapper_chains, skip_bound_arg, globals, locals, eval_str, sigcls)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2502</span>             <span class="k">return</span> <span class="n">sig</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">parameters</span><span class="o">=</span><span class="n">new_params</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2504</span> <span class="k">if</span> <span class="n">isfunction</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_signature_is_functionlike</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2505</span>     <span class="c1"># If it&#39;s a pure Python function, or an object that is duck type</span>
+<span class="g g-Whitespace">   </span><span class="mi">2506</span>     <span class="c1"># of a Python function (Cython functions, for instance), then:</span>
+<span class="ne">-&gt; </span><span class="mi">2507</span>     <span class="k">return</span> <span class="n">_signature_from_function</span><span class="p">(</span><span class="n">sigcls</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2508</span>                                     <span class="n">skip_bound_arg</span><span class="o">=</span><span class="n">skip_bound_arg</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2509</span>                                     <span class="nb">globals</span><span class="o">=</span><span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="nb">locals</span><span class="p">,</span> <span class="n">eval_str</span><span class="o">=</span><span class="n">eval_str</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2511</span> <span class="k">if</span> <span class="n">_signature_is_builtin</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2512</span>     <span class="k">return</span> <span class="n">_signature_from_builtin</span><span class="p">(</span><span class="n">sigcls</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2513</span>                                    <span class="n">skip_bound_arg</span><span class="o">=</span><span class="n">skip_bound_arg</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:2417,</span> in <span class="ni">_signature_from_function</span><span class="nt">(cls, func, skip_bound_arg, globals, locals, eval_str)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2412</span>     <span class="n">parameters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Parameter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2413</span>                                 <span class="n">kind</span><span class="o">=</span><span class="n">_VAR_KEYWORD</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">2415</span> <span class="c1"># Is &#39;func&#39; is a pure Python function - don&#39;t validate the</span>
+<span class="g g-Whitespace">   </span><span class="mi">2416</span> <span class="c1"># parameters list (for correct order and defaults), it should be OK.</span>
+<span class="ne">-&gt; </span><span class="mi">2417</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">parameters</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2418</span>            <span class="n">return_annotation</span><span class="o">=</span><span class="n">annotations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;return&#39;</span><span class="p">,</span> <span class="n">_empty</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">2419</span>            <span class="n">__validate_parameters__</span><span class="o">=</span><span class="n">is_duck_function</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:3011,</span> in <span class="ni">Signature.__init__</span><span class="nt">(self, parameters, return_annotation, __validate_parameters__)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3009</span>             <span class="n">params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">param</span>
+<span class="g g-Whitespace">   </span><span class="mi">3010</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3011</span>         <span class="n">params</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">((</span><span class="n">param</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3013</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">MappingProxyType</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3014</span> <span class="bp">self</span><span class="o">.</span><span class="n">_return_annotation</span> <span class="o">=</span> <span class="n">return_annotation</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:3011,</span> in <span class="ni">&lt;genexpr&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3009</span>             <span class="n">params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">param</span>
+<span class="g g-Whitespace">   </span><span class="mi">3010</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3011</span>         <span class="n">params</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">((</span><span class="n">param</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3013</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">MappingProxyType</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3014</span> <span class="bp">self</span><span class="o">.</span><span class="n">_return_annotation</span> <span class="o">=</span> <span class="n">return_annotation</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:2729,</span> in <span class="ni">Parameter.name</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2726</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_default</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s1">&#39;_default&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">2727</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_annotation</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s1">&#39;_annotation&#39;</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">2729</span> <span class="nd">@property</span>
+<span class="g g-Whitespace">   </span><span class="mi">2730</span> <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2731</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+<span class="g g-Whitespace">   </span><span class="mi">2733</span> <span class="nd">@property</span>
+<span class="g g-Whitespace">   </span><span class="mi">2734</span> <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1404,11 +1749,13 @@ Forest score:2834.343831510083
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;max_depth&#39;: 5, &#39;min_samples_leaf&#39;: 8, &#39;min_samples_split&#39;: 2}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;max_depth&#39;: 5, &#39;min_samples_leaf&#39;: 8, &#39;min_samples_split&#39;: 6}
 </pre></div>
 </div>
 </div>
 </div>
+<section id="comparing-the-trained-and-untrained-model">
+<h3>Comparing the trained and untrained model<a class="headerlink" href="#comparing-the-trained-and-untrained-model" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span>
@@ -1422,8 +1769,8 @@ Forest score:2834.343831510083
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial test score
-Old model score:0.8244719926527826
-New model score:0.8496366791883878
+Old model score:0.8260817754901654
+New model score:0.8502259876983046
 </pre></div>
 </div>
 </div>
@@ -1439,8 +1786,8 @@ New model score:0.8496366791883878
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross val score - Higher = better
-Old model score:4874.140056540236
-New model score:4511.238077923056
+Old model score:4851.737991219782
+New model score:4502.38910823569
 </pre></div>
 </div>
 </div>
@@ -1456,8 +1803,8 @@ New model score:4511.238077923056
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Absolute Error - Lower = better
-Old model score:2865.7418792965304
-New model score:2865.7418792965304
+Old model score:2843.7224081888435
+New model score:2843.7224081888435
 </pre></div>
 </div>
 </div>
@@ -1475,10 +1822,10 @@ New model score:2865.7418792965304
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x146178c0f90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x238788e39d0&gt;
 </pre></div>
 </div>
-<img alt="_images/3448f3c3a71a3a8add6d7719059c3415866d3a86acbcfc0055efb3fc64973d58.png" src="_images/3448f3c3a71a3a8add6d7719059c3415866d3a86acbcfc0055efb3fc64973d58.png" />
+<img alt="_images/0329b9fa6a1c3ff4bf7555bcd5a29b5a16d5efaf2798e6868be6ce54738f0c8b.png" src="_images/0329b9fa6a1c3ff4bf7555bcd5a29b5a16d5efaf2798e6868be6ce54738f0c8b.png" />
 </div>
 </div>
 </section>
@@ -1646,7 +1993,7 @@ New model score:2865.7418792965304
       <td>False</td>
       <td>True</td>
       <td>0</td>
-      <td>2399.754924</td>
+      <td>2370.961023</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1658,7 +2005,7 @@ New model score:2865.7418792965304
       <td>False</td>
       <td>False</td>
       <td>1</td>
-      <td>2779.244327</td>
+      <td>3085.368088</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1670,7 +2017,7 @@ New model score:2865.7418792965304
       <td>False</td>
       <td>False</td>
       <td>1</td>
-      <td>6272.593192</td>
+      <td>6360.629996</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1682,7 +2029,7 @@ New model score:2865.7418792965304
       <td>True</td>
       <td>False</td>
       <td>1</td>
-      <td>7189.940323</td>
+      <td>6752.514168</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1694,7 +2041,7 @@ New model score:2865.7418792965304
       <td>True</td>
       <td>False</td>
       <td>1</td>
-      <td>5380.255689</td>
+      <td>5300.155065</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1718,7 +2065,7 @@ New model score:2865.7418792965304
       <td>True</td>
       <td>False</td>
       <td>1</td>
-      <td>11227.230583</td>
+      <td>11017.736582</td>
     </tr>
     <tr>
       <th>1204</th>
@@ -1730,7 +2077,7 @@ New model score:2865.7418792965304
       <td>False</td>
       <td>False</td>
       <td>0</td>
-      <td>3040.857345</td>
+      <td>3170.726951</td>
     </tr>
     <tr>
       <th>1205</th>
@@ -1742,7 +2089,7 @@ New model score:2865.7418792965304
       <td>False</td>
       <td>False</td>
       <td>0</td>
-      <td>2413.565546</td>
+      <td>2432.350552</td>
     </tr>
     <tr>
       <th>1206</th>
@@ -1754,7 +2101,7 @@ New model score:2865.7418792965304
       <td>False</td>
       <td>True</td>
       <td>0</td>
-      <td>2409.548116</td>
+      <td>2370.203363</td>
     </tr>
     <tr>
       <th>1207</th>
@@ -1766,7 +2113,7 @@ New model score:2865.7418792965304
       <td>True</td>
       <td>False</td>
       <td>0</td>
-      <td>13969.904773</td>
+      <td>13918.243608</td>
     </tr>
   </tbody>
 </table>
@@ -1774,14 +2121,16 @@ New model score:2865.7418792965304
 </div></div></div>
 </div>
 </section>
+</section>
 <section id="conclusion-and-closing">
-<h3><strong>Conclusion and Closing</strong><a class="headerlink" href="#conclusion-and-closing" title="Link to this heading">#</a></h3>
+<h2><strong>Conclusion and Closing</strong><a class="headerlink" href="#conclusion-and-closing" title="Link to this heading">#</a></h2>
 <p>Thank you for taking the time to explore this project with me. From data preparation to model validation, We’ve walked through the process of building a predictive model for insurance costs, highlighting key steps like cleaning data, comparing models, and fine-tuning performance.</p>
 <p>If you have any questions or would like to dive deeper into specific aspects of the project, I’d be happy to assist!</p>
 <p>You can contact me at <em>[business&#64;falcontreras.com]</em> or alternatively there’s a contact form within <a class="reference external" href="https://falcontreras.com">falcontreras.com</a></p>
 <p><strong>Thank you!</strong> 👋</p>
 </section>
-</section>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -1801,16 +2150,16 @@ New model score:2865.7418792965304
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "venv"
+            mode: "python"
         },
         kernelOptions: {
-            name: "venv",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'venv'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -1840,21 +2189,25 @@ New model score:2865.7418792965304
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-insurance-csv">Dataset: insurance.csv</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning"><strong>Data Cleaning</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data"><strong>Preparing the data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">Data Exploration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-data-for-model-fitting">Prepare the data for model fitting</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observe-relationships">Observe relationships</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-and-compare-models"><strong>Train and compare models</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression"><strong>Linear Regression</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-regression"><strong>Random Forest Regression</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-comparison">Performance comparison</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importances-comparison">Feature importances comparison</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-tuning">Model tuning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-model">Building the model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovering-the-relationships">Discovering the relationships</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model"><strong>Training the model</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-performance">Comparing the performance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unveiling-the-feature-importances">Unveiling the feature importances</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-tuning-and-implementation">Model tuning and implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-trained-and-untrained-model">Comparing the trained and untrained model</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-implementation">Model implementation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-and-closing"><strong>Conclusion and Closing</strong></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-and-closing"><strong>Conclusion and Closing</strong></a></li>
 </ul>
   </nav></div>
 

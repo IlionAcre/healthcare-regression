@@ -4,6 +4,10 @@
 format: jb-book
 root: healthcare_regression
 parts:
+  - caption: The database
+    chapters:
+      - file: healthcare_regression#dataset:-insurance.csv
+      
   - caption: Preparing the Data
     chapters:    
       - file: healthcare_regression#preparing-the-data
