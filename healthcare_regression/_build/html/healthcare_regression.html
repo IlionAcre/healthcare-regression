@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Predicting Insurance Costs: A Data Science Project &#8212; healthcare_regression</title>
+    <title>Predicting Insurance Costs With Regression Models &#8212; healthcare_regression</title>
   
   
   
@@ -164,7 +164,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Predicting Insurance Costs: A Data Science Project
+                    Predicting Insurance Costs With Regression Models
                 </a>
             </li>
         </ul>
@@ -344,7 +344,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Predicting Insurance Costs: A Data Science Project</h1>
+    <h1>Predicting Insurance Costs With Regression Models</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -354,27 +354,31 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-insurance-csv">Dataset: insurance.csv</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data"><strong>Preparing the data</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">Data Exploration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-data-for-model-fitting">Prepare the data for model fitting</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>Predicting Insurance Costs With Regression Models</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-insurance-csv">Dataset: insurance.csv</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data"><strong>Preparing the data</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">Data Exploration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-data-for-model-fitting">Prepare the data for model fitting</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-model">Building the model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovering-the-relationships">Discovering the relationships</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model"><strong>Training the model</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-performance">Comparing the performance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unveiling-the-feature-importances">Unveiling the feature importances</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-model">Building the model</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discovering-the-relationships">Discovering the relationships</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model"><strong>Training the model</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-performance">Comparing the performance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unveiling-the-feature-importances">Unveiling the feature importances</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-tuning-and-implementation">Model tuning and implementation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-trained-and-untrained-model">Comparing the trained and untrained model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-implementation">Model implementation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-tuning-and-implementation">Model tuning and implementation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-trained-and-untrained-model">Comparing the trained and untrained model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-implementation">Model implementation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-and-closing"><strong>Conclusion and Closing</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-and-closing"><strong>Conclusion and Closing</strong></a><ul class="visible nav section-nav flex-column">
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -385,14 +389,15 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="predicting-insurance-costs-a-data-science-project">
-<h1><em>Predicting Insurance Costs: A Data Science Project</em><a class="headerlink" href="#predicting-insurance-costs-a-data-science-project" title="Link to this heading">#</a></h1>
+  <section id="predicting-insurance-costs-with-regression-models">
+<h1><em>Predicting Insurance Costs With Regression Models</em><a class="headerlink" href="#predicting-insurance-costs-with-regression-models" title="Link to this heading">#</a></h1>
 <p>Welcome, and thank you for joining me today.</p>
 <p>This project revolves around a critical question faced by insurance companies: <strong>How can we accurately predict the cost of insurance for customers?</strong> Understanding and predicting insurance costs is essential for businesses in this industry, as it directly impacts pricing strategies, risk assessment, and profitability. A well-designed predictive model not only ensures fair pricing for customers but also helps companies manage financial risks effectively.</p>
 <p>To address this problem, I applied a complete data science workflow. The project involved several key steps: <strong>data cleaning</strong>, where the foundation of any reliable analysis is laid; <strong>model selection and comparison</strong>, to find the most effective predictive techniques; <strong>hyperparameter tuning</strong>, to refine model performance; and finally, <strong>applying the model to new data</strong>, demonstrating its practicality in a real-world context.</p>
 <p>By tackling this challenge, I aimed to showcase my technical skills while addressing a problem with significant business implications. In order to achieve this, we will be working on the following dataset.</p>
+</section>
 <section id="dataset-insurance-csv">
-<h2>Dataset: insurance.csv<a class="headerlink" href="#dataset-insurance-csv" title="Link to this heading">#</a></h2>
+<h1>Dataset: insurance.csv<a class="headerlink" href="#dataset-insurance-csv" title="Link to this heading">#</a></h1>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Column</p></th>
@@ -457,7 +462,7 @@
 </div>
 </section>
 <section id="preparing-the-data">
-<h2><strong>Preparing the data</strong><a class="headerlink" href="#preparing-the-data" title="Link to this heading">#</a></h2>
+<h1><strong>Preparing the data</strong><a class="headerlink" href="#preparing-the-data" title="Link to this heading">#</a></h1>
 <p>Data preparation is the cornerstone of any successful machine learning project. Here’s how we tackle this important phase:</p>
 <ul class="simple">
 <li><p><strong>Missing Data</strong>: Imputed or removed missing values to ensure the dataset was complete.</p></li>
@@ -466,7 +471,7 @@
 </ul>
 <p>This step ensured a clean and robust dataset, ready for analysis and modeling</p>
 <section id="data-exploration">
-<h3>Data Exploration<a class="headerlink" href="#data-exploration" title="Link to this heading">#</a></h3>
+<h2>Data Exploration<a class="headerlink" href="#data-exploration" title="Link to this heading">#</a></h2>
 <p>Getting to know the database is the first step in the process of reforming it to match the desired criteria.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -715,104 +720,104 @@ memory usage: 73.3+ KB
   </thead>
   <tbody>
     <tr>
-      <th>789</th>
-      <td>62.0</td>
-      <td>female</td>
-      <td>29.920</td>
-      <td>0.0</td>
-      <td>no</td>
-      <td>Southeast</td>
-      <td>13457.9608</td>
-    </tr>
-    <tr>
-      <th>296</th>
-      <td>19.0</td>
+      <th>686</th>
+      <td>42.0</td>
       <td>male</td>
-      <td>27.700</td>
-      <td>0.0</td>
-      <td>yes</td>
-      <td>Southwest</td>
-      <td>16297.846</td>
-    </tr>
-    <tr>
-      <th>900</th>
-      <td>49.0</td>
-      <td>male</td>
-      <td>22.515</td>
-      <td>0.0</td>
+      <td>26.125</td>
+      <td>2.0</td>
       <td>no</td>
       <td>Northeast</td>
-      <td>8688.85885</td>
+      <td>$7729.64575</td>
     </tr>
     <tr>
-      <th>223</th>
+      <th>163</th>
+      <td>32.0</td>
+      <td>NaN</td>
+      <td>29.800</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1143</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>no</td>
+      <td>southeast</td>
+      <td>6338.0756</td>
+    </tr>
+    <tr>
+      <th>230</th>
+      <td>42.0</td>
+      <td>female</td>
+      <td>36.195</td>
+      <td>1.0</td>
+      <td>no</td>
+      <td>Northwest</td>
+      <td>7443.64305</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>29.0</td>
+      <td>female</td>
+      <td>38.830</td>
+      <td>3.0</td>
+      <td>no</td>
+      <td>southeast</td>
+      <td>5138.2567</td>
+    </tr>
+    <tr>
+      <th>565</th>
       <td>19.0</td>
-      <td>male</td>
-      <td>34.800</td>
-      <td>0.0</td>
-      <td>yes</td>
-      <td>southwest</td>
-      <td>34779.615</td>
-    </tr>
-    <tr>
-      <th>489</th>
-      <td>53.0</td>
-      <td>male</td>
-      <td>31.160</td>
-      <td>1.0</td>
-      <td>no</td>
-      <td>northwest</td>
-      <td>10461.9794</td>
-    </tr>
-    <tr>
-      <th>571</th>
-      <td>18.0</td>
       <td>female</td>
-      <td>37.290</td>
-      <td>-1.0</td>
-      <td>no</td>
-      <td>Southeast</td>
-      <td>2219.4451</td>
-    </tr>
-    <tr>
-      <th>1248</th>
-      <td>18.0</td>
-      <td>female</td>
-      <td>39.820</td>
+      <td>30.495</td>
       <td>0.0</td>
       <td>no</td>
-      <td>Southeast</td>
-      <td>1633.9618</td>
+      <td>Northwest</td>
+      <td>2128.43105</td>
     </tr>
     <tr>
-      <th>240</th>
-      <td>NaN</td>
-      <td>female</td>
-      <td>36.670</td>
-      <td>NaN</td>
+      <th>1042</th>
+      <td>20.0</td>
+      <td>male</td>
+      <td>30.685</td>
+      <td>0.0</td>
       <td>yes</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>northeast</td>
+      <td>33475.81715</td>
     </tr>
     <tr>
-      <th>1148</th>
-      <td>55.0</td>
-      <td>male</td>
-      <td>21.500</td>
-      <td>1.0</td>
-      <td>no</td>
-      <td>Southwest</td>
-      <td>10791.96</td>
-    </tr>
-    <tr>
-      <th>141</th>
-      <td>26.0</td>
-      <td>male</td>
-      <td>32.490</td>
-      <td>1.0</td>
+      <th>616</th>
+      <td>-56.0</td>
+      <td>female</td>
+      <td>28.595</td>
+      <td>0.0</td>
       <td>no</td>
       <td>northeast</td>
-      <td>3490.5491</td>
+      <td>11658.11505</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>30.0</td>
+      <td>male</td>
+      <td>44.220</td>
+      <td>2.0</td>
+      <td>no</td>
+      <td>southeast</td>
+      <td>4266.1658</td>
+    </tr>
+    <tr>
+      <th>1255</th>
+      <td>42.0</td>
+      <td>female</td>
+      <td>37.900</td>
+      <td>0.0</td>
+      <td>no</td>
+      <td>Southwest</td>
+      <td>6474.013</td>
     </tr>
   </tbody>
 </table>
@@ -820,7 +825,7 @@ memory usage: 73.3+ KB
 </div>
 </section>
 <section id="data-cleaning">
-<h3>Data cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h3>
+<h2>Data cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h2>
 <p>Once we know the data, we can start adjusting it to our needs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -895,104 +900,104 @@ memory usage: 67.2+ KB
   </thead>
   <tbody>
     <tr>
-      <th>1018</th>
-      <td>54.0</td>
-      <td>female</td>
-      <td>35.815</td>
-      <td>3.0</td>
+      <th>749</th>
+      <td>28.0</td>
+      <td>male</td>
+      <td>30.875</td>
+      <td>0.0</td>
       <td>False</td>
       <td>northwest</td>
-      <td>12495.29085</td>
+      <td>3062.50825</td>
     </tr>
     <tr>
-      <th>656</th>
-      <td>26.0</td>
+      <th>886</th>
+      <td>57.0</td>
+      <td>male</td>
+      <td>28.975</td>
+      <td>0.0</td>
+      <td>True</td>
+      <td>northeast</td>
+      <td>27218.43725</td>
+    </tr>
+    <tr>
+      <th>735</th>
+      <td>49.0</td>
       <td>female</td>
-      <td>42.400</td>
+      <td>34.770</td>
       <td>1.0</td>
       <td>False</td>
-      <td>southwest</td>
-      <td>3410.32400</td>
+      <td>northwest</td>
+      <td>9583.89330</td>
     </tr>
     <tr>
-      <th>385</th>
-      <td>19.0</td>
-      <td>male</td>
-      <td>34.400</td>
-      <td>0.0</td>
-      <td>False</td>
-      <td>southwest</td>
-      <td>1261.85900</td>
-    </tr>
-    <tr>
-      <th>136</th>
-      <td>19.0</td>
-      <td>male</td>
-      <td>34.100</td>
-      <td>0.0</td>
-      <td>False</td>
-      <td>southwest</td>
-      <td>1261.44200</td>
-    </tr>
-    <tr>
-      <th>1149</th>
-      <td>42.0</td>
-      <td>male</td>
-      <td>34.100</td>
-      <td>0.0</td>
-      <td>False</td>
-      <td>southwest</td>
-      <td>5979.73100</td>
-    </tr>
-    <tr>
-      <th>340</th>
-      <td>24.0</td>
+      <th>56</th>
+      <td>58.0</td>
       <td>female</td>
-      <td>27.600</td>
-      <td>0.0</td>
-      <td>False</td>
-      <td>southwest</td>
-      <td>18955.22017</td>
-    </tr>
-    <tr>
-      <th>1172</th>
-      <td>56.0</td>
-      <td>female</td>
-      <td>41.910</td>
-      <td>0.0</td>
-      <td>False</td>
-      <td>southeast</td>
-      <td>11093.62290</td>
-    </tr>
-    <tr>
-      <th>90</th>
-      <td>21.0</td>
-      <td>female</td>
-      <td>39.490</td>
-      <td>0.0</td>
-      <td>False</td>
-      <td>southeast</td>
-      <td>2026.97410</td>
-    </tr>
-    <tr>
-      <th>627</th>
-      <td>33.0</td>
-      <td>male</td>
-      <td>42.460</td>
-      <td>1.0</td>
-      <td>False</td>
-      <td>southeast</td>
-      <td>11326.71487</td>
-    </tr>
-    <tr>
-      <th>648</th>
-      <td>18.0</td>
-      <td>male</td>
-      <td>28.500</td>
-      <td>0.0</td>
+      <td>31.825</td>
+      <td>2.0</td>
       <td>False</td>
       <td>northeast</td>
-      <td>1712.22700</td>
+      <td>13607.36875</td>
+    </tr>
+    <tr>
+      <th>1035</th>
+      <td>54.0</td>
+      <td>female</td>
+      <td>23.000</td>
+      <td>3.0</td>
+      <td>False</td>
+      <td>southwest</td>
+      <td>12094.47800</td>
+    </tr>
+    <tr>
+      <th>739</th>
+      <td>29.0</td>
+      <td>male</td>
+      <td>35.500</td>
+      <td>2.0</td>
+      <td>True</td>
+      <td>southwest</td>
+      <td>44585.45587</td>
+    </tr>
+    <tr>
+      <th>1043</th>
+      <td>28.0</td>
+      <td>female</td>
+      <td>25.800</td>
+      <td>0.0</td>
+      <td>False</td>
+      <td>southwest</td>
+      <td>3161.45400</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>46.0</td>
+      <td>female</td>
+      <td>33.440</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>southeast</td>
+      <td>8240.58960</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>18.0</td>
+      <td>male</td>
+      <td>33.770</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>southeast</td>
+      <td>1725.55230</td>
+    </tr>
+    <tr>
+      <th>951</th>
+      <td>51.0</td>
+      <td>male</td>
+      <td>42.900</td>
+      <td>2.0</td>
+      <td>True</td>
+      <td>southeast</td>
+      <td>47462.89400</td>
     </tr>
   </tbody>
 </table>
@@ -1007,7 +1012,7 @@ memory usage: 67.2+ KB
 </div>
 </section>
 <section id="prepare-the-data-for-model-fitting">
-<h3>Prepare the data for model fitting<a class="headerlink" href="#prepare-the-data-for-model-fitting" title="Link to this heading">#</a></h3>
+<h2>Prepare the data for model fitting<a class="headerlink" href="#prepare-the-data-for-model-fitting" title="Link to this heading">#</a></h2>
 <p>Before fitting any machine learning model, it’s essential to ensure that the dataset is properly prepared. This step involves transforming raw data into a clean and structured format that models can effectively interpret.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1125,10 +1130,10 @@ memory usage: 67.2+ KB
 </section>
 </section>
 <section id="building-the-model">
-<h2>Building the model<a class="headerlink" href="#building-the-model" title="Link to this heading">#</a></h2>
+<h1>Building the model<a class="headerlink" href="#building-the-model" title="Link to this heading">#</a></h1>
 <p>Building the model is a process that involves both understanding of the data, and focus towards the desired goals. Choosing the model and the training method is an important decision, that’s why it is important to unveil the hidden connections between the different variables before commiting to use an specific model.</p>
 <section id="discovering-the-relationships">
-<h3>Discovering the relationships<a class="headerlink" href="#discovering-the-relationships" title="Link to this heading">#</a></h3>
+<h2>Discovering the relationships<a class="headerlink" href="#discovering-the-relationships" title="Link to this heading">#</a></h2>
 <p>Understanding the relationships between variables is a crucial step in building predictive models. It’s important to analyze the correlations between features and the target variable (charges) to identify the most influential predictors. Visual tools such as scatter plots and heatmaps that the only strong relationship was actually found within the “Smoker” variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1168,7 +1173,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1ad8deefb10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x16f2e7bf790&gt;
 </pre></div>
 </div>
 <img alt="_images/8dfc4c5891fa5d150fc9fc97c72a0ebd6f5083fbd43732a8d795509ae62a1bd8.png" src="_images/8dfc4c5891fa5d150fc9fc97c72a0ebd6f5083fbd43732a8d795509ae62a1bd8.png" />
@@ -1181,7 +1186,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1ad8e491e90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x16f2e7f7790&gt;
 </pre></div>
 </div>
 <img alt="_images/c2103c383f3ccedd765d9056049cad2d401cc8fe6e7f192e775431572c0cc8b3.png" src="_images/c2103c383f3ccedd765d9056049cad2d401cc8fe6e7f192e775431572c0cc8b3.png" />
@@ -1194,7 +1199,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1ad8e1f7090&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x16f2e879010&gt;
 </pre></div>
 </div>
 <img alt="_images/bb6e6ec8e25cb2babb57e95112d783d0e1bf6f43471b0fd9ddb0ea8834d691ca.png" src="_images/bb6e6ec8e25cb2babb57e95112d783d0e1bf6f43471b0fd9ddb0ea8834d691ca.png" />
@@ -1207,7 +1212,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1ad8e2a8350&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x16f2e83b6d0&gt;
 </pre></div>
 </div>
 <img alt="_images/4930acb1053157f56caa2f78c3d087dd08fd513beb44d241e3ab58d62aa2b927.png" src="_images/4930acb1053157f56caa2f78c3d087dd08fd513beb44d241e3ab58d62aa2b927.png" />
@@ -1220,7 +1225,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1ad8ed2a150&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x16f2e820e50&gt;
 </pre></div>
 </div>
 <img alt="_images/091e6bbac269e26925b42473c34c4830ee48b1acfb910729bd26ee1165abb365.png" src="_images/091e6bbac269e26925b42473c34c4830ee48b1acfb910729bd26ee1165abb365.png" />
@@ -1233,7 +1238,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1ad8ed8eed0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x16f2f161010&gt;
 </pre></div>
 </div>
 <img alt="_images/ad623ef8ce009d74d95ac6ccfc4ad543f6434ee36e1f17a1cc2b56f638260d69.png" src="_images/ad623ef8ce009d74d95ac6ccfc4ad543f6434ee36e1f17a1cc2b56f638260d69.png" />
@@ -1241,7 +1246,7 @@ memory usage: 67.2+ KB
 </div>
 </section>
 <section id="training-the-model">
-<h3><strong>Training the model</strong><a class="headerlink" href="#training-the-model" title="Link to this heading">#</a></h3>
+<h2><strong>Training the model</strong><a class="headerlink" href="#training-the-model" title="Link to this heading">#</a></h2>
 <p>To predict insurance costs, we’ll evaluate two models:</p>
 <p><strong>Linear Regression</strong></p>
 <ul class="simple">
@@ -1279,7 +1284,7 @@ memory usage: 67.2+ KB
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial test score
 Linear score:0.7049323160872817
-Forest score:0.8241950910916487
+Forest score:0.8265483661077736
 </pre></div>
 </div>
 </div>
@@ -1298,7 +1303,7 @@ Forest score:0.8241950910916487
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross val score - Higher = better
 Linear score:0.7442527809757057
-Forest score:0.8336945062847578
+Forest score:0.8375704238027633
 </pre></div>
 </div>
 </div>
@@ -1317,7 +1322,7 @@ Forest score:0.8336945062847578
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r2 Score - Higher = better
 Linear score:0.7049323160872817
-Forest score:0.8241950910916487
+Forest score:0.8265483661077736
 </pre></div>
 </div>
 </div>
@@ -1335,7 +1340,7 @@ Forest score:0.8241950910916487
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Root Mean Squared Error - Lower = better
 Linear score:6319.54217986643
-Forest score:4877.983104575438
+Forest score:4845.225459840167
 </pre></div>
 </div>
 </div>
@@ -1353,14 +1358,14 @@ Forest score:4877.983104575438
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Absolute Error - Lower = better
 Linear score:4378.723562983686
-Forest score:2852.4594232888435
+Forest score:2811.1412235723137
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="comparing-the-performance">
-<h3>Comparing the performance<a class="headerlink" href="#comparing-the-performance" title="Link to this heading">#</a></h3>
+<h2>Comparing the performance<a class="headerlink" href="#comparing-the-performance" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">linear_y_predict</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">70</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="mi">130</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="mi">180</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">)</span>
@@ -1374,15 +1379,15 @@ Forest score:2852.4594232888435
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1ad8acee3d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16f2f0e7290&gt;
 </pre></div>
 </div>
-<img alt="_images/8cf603407c1a05a4f704c14c7a6692d57106b4ade3c9fcf97c528f5b2350a0b8.png" src="_images/8cf603407c1a05a4f704c14c7a6692d57106b4ade3c9fcf97c528f5b2350a0b8.png" />
+<img alt="_images/dc1577dece07020a1af4cfeaf91382f973bdd644236045fc0d835c29c45ef8b2.png" src="_images/dc1577dece07020a1af4cfeaf91382f973bdd644236045fc0d835c29c45ef8b2.png" />
 </div>
 </div>
 </section>
 <section id="unveiling-the-feature-importances">
-<h3>Unveiling the feature importances<a class="headerlink" href="#unveiling-the-feature-importances" title="Link to this heading">#</a></h3>
+<h2>Unveiling the feature importances<a class="headerlink" href="#unveiling-the-feature-importances" title="Link to this heading">#</a></h2>
 <p>To understand which factors significantly influence insurance costs, I compared feature importances derived from the models. For this, the forest model seemed to spot weaker but relevant relationships on the variables “BMI” and “Age”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1436,13 +1441,13 @@ Forest score:2852.4594232888435
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5ccd6a29cf7e40c333e54fd50aac1cbce05e4ba92088924d6f72fcbd2d7f16cb.png" src="_images/5ccd6a29cf7e40c333e54fd50aac1cbce05e4ba92088924d6f72fcbd2d7f16cb.png" />
+<img alt="_images/ff8a751e60b44cc152d042bd4913f222f427727d199c83918620dfd1b5cfe368.png" src="_images/ff8a751e60b44cc152d042bd4913f222f427727d199c83918620dfd1b5cfe368.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="model-tuning-and-implementation">
-<h2>Model tuning and implementation<a class="headerlink" href="#model-tuning-and-implementation" title="Link to this heading">#</a></h2>
+<h1>Model tuning and implementation<a class="headerlink" href="#model-tuning-and-implementation" title="Link to this heading">#</a></h1>
 <p>After identifying Random Forest Regression as the best-performing model, I focused on tuning its hyperparameters to maximize predictive accuracy. Key parameters like the number of trees, maximum depth, and minimum samples per leaf were adjusted using grid search and cross-validation. This process helped refine the model, reducing overfitting and improving its ability to generalize to new data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1662,7 +1667,7 @@ Forest score:2852.4594232888435
 </div>
 </div>
 <section id="comparing-the-trained-and-untrained-model">
-<h3>Comparing the trained and untrained model<a class="headerlink" href="#comparing-the-trained-and-untrained-model" title="Link to this heading">#</a></h3>
+<h2>Comparing the trained and untrained model<a class="headerlink" href="#comparing-the-trained-and-untrained-model" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span>
@@ -1737,7 +1742,7 @@ New model score:2843.7224081888435
 </div>
 </section>
 <section id="model-implementation">
-<h3>Model implementation<a class="headerlink" href="#model-implementation" title="Link to this heading">#</a></h3>
+<h2>Model implementation<a class="headerlink" href="#model-implementation" title="Link to this heading">#</a></h2>
 <p>Lastly, here’s an implementation of the model in another dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2030,12 +2035,11 @@ New model score:2843.7224081888435
 </section>
 </section>
 <section id="conclusion-and-closing">
-<h2><strong>Conclusion and Closing</strong><a class="headerlink" href="#conclusion-and-closing" title="Link to this heading">#</a></h2>
+<h1><strong>Conclusion and Closing</strong><a class="headerlink" href="#conclusion-and-closing" title="Link to this heading">#</a></h1>
 <p>Thank you for taking the time to explore this project with me. From data preparation to model validation, We’ve walked through the process of building a predictive model for insurance costs, highlighting key steps like cleaning data, comparing models, and fine-tuning performance.</p>
 <p>If you have any questions or would like to dive deeper into specific aspects of the project, I’d be happy to assist!</p>
 <p>You can contact me at <em>[business&#64;falcontreras.com]</em> or alternatively there’s a contact form within <a class="reference external" href="https://falcontreras.com">falcontreras.com</a></p>
 <p><strong>Thank you!</strong> 👋</p>
-</section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -2097,27 +2101,31 @@ New model score:2843.7224081888435
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-insurance-csv">Dataset: insurance.csv</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data"><strong>Preparing the data</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">Data Exploration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-data-for-model-fitting">Prepare the data for model fitting</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><em>Predicting Insurance Costs With Regression Models</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-insurance-csv">Dataset: insurance.csv</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data"><strong>Preparing the data</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">Data Exploration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-data-for-model-fitting">Prepare the data for model fitting</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-model">Building the model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovering-the-relationships">Discovering the relationships</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model"><strong>Training the model</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-performance">Comparing the performance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unveiling-the-feature-importances">Unveiling the feature importances</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-model">Building the model</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discovering-the-relationships">Discovering the relationships</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-the-model"><strong>Training the model</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-performance">Comparing the performance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unveiling-the-feature-importances">Unveiling the feature importances</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-tuning-and-implementation">Model tuning and implementation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-trained-and-untrained-model">Comparing the trained and untrained model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-implementation">Model implementation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-tuning-and-implementation">Model tuning and implementation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-trained-and-untrained-model">Comparing the trained and untrained model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-implementation">Model implementation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-and-closing"><strong>Conclusion and Closing</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-and-closing"><strong>Conclusion and Closing</strong></a><ul class="visible nav section-nav flex-column">
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
