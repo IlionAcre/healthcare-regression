@@ -2,20 +2,18 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: healthcare_regression
 chapters:
-  - file: healthcare_regression.ipynb
-    sections:
-      - file: intro#Predicting-Insurance-Costs-A-Data-Science-Project
-      - file: intro#Step-1-Data-Cleaning
-        sections:
-          - file: intro#Prepare-the-data-for-model-fitting
-      - file: intro#Observe-relationships
-      - file: intro#Train-and-compare-models
-        sections:
-          - file: intro#Performance-comparison
-          - file: intro#Feature-importances-comparison
-      - file: intro#Model-tuning
-      - file: intro#Model-implementation
-      - file: intro#Conclusion-and-Closing
+    - file: healthcare_regression#Predicting-Insurance-Costs-A-Data-Science-Project
+    - file: healthcare_regression#Step-1-Data-Cleaning
+      sections:
+        - file: healthcare_regression#Prepare-the-data-for-model-fitting
+    - file: healthcare_regression#Observe-relationships
+    - file: healthcare_regression#Train-and-compare-models
+      sections:
+        - file: healthcare_regression#Performance-comparison
+        - file: healthcare_regression#Feature-importances-comparison
+    - file: healthcare_regression#Model-tuning
+    - file: healthcare_regression#Model-implementation
+    - file: healthcare_regression#Conclusion-and-Closing
 
