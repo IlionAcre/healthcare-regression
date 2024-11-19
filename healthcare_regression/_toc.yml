@@ -4,16 +4,16 @@
 format: jb-book
 root: healthcare_regression
 chapters:
-    - file: healthcare_regression#Predicting-Insurance-Costs-A-Data-Science-Project
-    - file: healthcare_regression#Step-1-Data-Cleaning
-      sections:
-        - file: healthcare_regression#Prepare-the-data-for-model-fitting
-    - file: healthcare_regression#Observe-relationships
-    - file: healthcare_regression#Train-and-compare-models
-      sections:
-        - file: healthcare_regression#Performance-comparison
-        - file: healthcare_regression#Feature-importances-comparison
-    - file: healthcare_regression#Model-tuning
-    - file: healthcare_regression#Model-implementation
-    - file: healthcare_regression#Conclusion-and-Closing
+  - file: healthcare_regression#Predicting-Insurance-Costs-A-Data-Science-Project
+  - file: healthcare_regression#Step-1-Data-Cleaning
+    sections:
+      - file: healthcare_regression#Prepare-the-data-for-model-fitting
+  - file: healthcare_regression#Observe-relationships
+  - file: healthcare_regression#Train-and-compare-models
+    sections:
+      - file: healthcare_regression#Performance-comparison
+      - file: healthcare_regression#Feature-importances-comparison
+  - file: healthcare_regression#Model-tuning
+  - file: healthcare_regression#Model-implementation
+  - file: healthcare_regression#Conclusion-and-Closing
 
