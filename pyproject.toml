@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "healthcare-regression"
+version = "0.1.0"
+description = "Regression methods for healthcare dataset prediction"
+authors = ["Fabian Contreras"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+jupyter-book = "^1.0.3"
+ghp-import = "^2.1.0"
+matplotlib = "^3.9.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
