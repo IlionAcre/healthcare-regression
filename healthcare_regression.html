@@ -355,9 +355,9 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-insurance-csv">Dataset: insurance.csv</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data"><strong>Preparing the data</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">Data Exploration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data"><strong>Preparing the data</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">Data Exploration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-data-for-model-fitting">Prepare the data for model fitting</a></li>
 </ul>
 </li>
@@ -465,9 +465,8 @@
 <li><p><strong>Encoding Categorical Variables</strong>: Converted categories into numerical representations suitable for modeling.</p></li>
 </ul>
 <p>This step ensured a clean and robust dataset, ready for analysis and modeling</p>
-</section>
 <section id="data-exploration">
-<h2>Data Exploration<a class="headerlink" href="#data-exploration" title="Link to this heading">#</a></h2>
+<h3>Data Exploration<a class="headerlink" href="#data-exploration" title="Link to this heading">#</a></h3>
 <p>Getting to know the database is the first step in the process of reforming it to match the desired criteria.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -716,104 +715,104 @@ memory usage: 73.3+ KB
   </thead>
   <tbody>
     <tr>
-      <th>1248</th>
-      <td>18.0</td>
-      <td>female</td>
-      <td>39.820</td>
-      <td>0.0</td>
-      <td>no</td>
-      <td>Southeast</td>
-      <td>1633.9618</td>
-    </tr>
-    <tr>
-      <th>786</th>
-      <td>60.0</td>
+      <th>747</th>
+      <td>19.0</td>
       <td>male</td>
-      <td>36.955</td>
+      <td>21.755</td>
       <td>0.0</td>
-      <td>no</td>
-      <td>Northeast</td>
-      <td>12741.16745</td>
-    </tr>
-    <tr>
-      <th>829</th>
-      <td>39.0</td>
-      <td>male</td>
-      <td>21.850</td>
-      <td>1.0</td>
       <td>no</td>
       <td>northwest</td>
-      <td>6117.4945</td>
+      <td>1627.28245</td>
     </tr>
     <tr>
-      <th>508</th>
-      <td>24.0</td>
+      <th>118</th>
+      <td>49.0</td>
       <td>female</td>
-      <td>25.270</td>
+      <td>27.170</td>
       <td>0.0</td>
-      <td>no</td>
-      <td>Northeast</td>
-      <td>3044.2133</td>
-    </tr>
-    <tr>
-      <th>571</th>
-      <td>18.0</td>
-      <td>female</td>
-      <td>37.290</td>
-      <td>-1.0</td>
       <td>no</td>
       <td>Southeast</td>
-      <td>2219.4451</td>
+      <td>8601.3293</td>
     </tr>
     <tr>
-      <th>509</th>
-      <td>57.0</td>
-      <td>woman</td>
-      <td>28.700</td>
-      <td>-0.0</td>
+      <th>1269</th>
+      <td>45.0</td>
+      <td>male</td>
+      <td>27.500</td>
+      <td>3.0</td>
       <td>no</td>
       <td>Southwest</td>
-      <td>11455.28</td>
+      <td>8615.3</td>
     </tr>
     <tr>
-      <th>212</th>
-      <td>24.0</td>
+      <th>1036</th>
+      <td>22.0</td>
       <td>male</td>
-      <td>28.500</td>
+      <td>37.070</td>
       <td>2.0</td>
+      <td>yes</td>
+      <td>Southeast</td>
+      <td>37484.4493</td>
+    </tr>
+    <tr>
+      <th>867</th>
+      <td>57.0</td>
+      <td>M</td>
+      <td>43.700</td>
+      <td>1.0</td>
+      <td>no</td>
+      <td>Southwest</td>
+      <td>11576.13</td>
+    </tr>
+    <tr>
+      <th>646</th>
+      <td>39.0</td>
+      <td>male</td>
+      <td>26.220</td>
+      <td>1.0</td>
       <td>no</td>
       <td>Northwest</td>
-      <td>3537.703</td>
+      <td>6123.5688</td>
     </tr>
     <tr>
-      <th>1236</th>
-      <td>63.0</td>
-      <td>female</td>
-      <td>21.660</td>
+      <th>924</th>
+      <td>43.0</td>
+      <td>male</td>
+      <td>23.200</td>
       <td>0.0</td>
       <td>no</td>
-      <td>Northeast</td>
-      <td>14449.8544</td>
+      <td>southwest</td>
+      <td>6250.435</td>
     </tr>
     <tr>
-      <th>83</th>
-      <td>48.0</td>
+      <th>303</th>
+      <td>NaN</td>
       <td>female</td>
-      <td>41.230</td>
-      <td>4.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>no</td>
-      <td>Northwest</td>
-      <td>11033.6617</td>
+      <td>NaN</td>
+      <td>4349.462</td>
     </tr>
     <tr>
-      <th>1278</th>
-      <td>-39.0</td>
-      <td>male</td>
-      <td>29.925</td>
+      <th>418</th>
+      <td>64.0</td>
+      <td>man</td>
+      <td>39.160</td>
       <td>1.0</td>
-      <td>yes</td>
-      <td>northeast</td>
-      <td>22462.04375</td>
+      <td>no</td>
+      <td>southeast</td>
+      <td>$14418.2804</td>
+    </tr>
+    <tr>
+      <th>580</th>
+      <td>59.0</td>
+      <td>male</td>
+      <td>25.460</td>
+      <td>1.0</td>
+      <td>no</td>
+      <td>Northeast</td>
+      <td>12913.9924</td>
     </tr>
   </tbody>
 </table>
@@ -821,7 +820,7 @@ memory usage: 73.3+ KB
 </div>
 </section>
 <section id="data-cleaning">
-<h2>Data cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h2>
+<h3>Data cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h3>
 <p>Once we know the data, we can start adjusting it to our needs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -896,104 +895,104 @@ memory usage: 67.2+ KB
   </thead>
   <tbody>
     <tr>
-      <th>387</th>
-      <td>50.0</td>
-      <td>male</td>
-      <td>25.365</td>
+      <th>794</th>
+      <td>39.0</td>
+      <td>female</td>
+      <td>31.920</td>
       <td>2.0</td>
       <td>False</td>
       <td>northwest</td>
-      <td>30284.64294</td>
+      <td>7209.49180</td>
     </tr>
     <tr>
-      <th>412</th>
-      <td>26.0</td>
-      <td>female</td>
-      <td>17.195</td>
-      <td>2.0</td>
-      <td>True</td>
-      <td>northeast</td>
-      <td>14455.64405</td>
-    </tr>
-    <tr>
-      <th>481</th>
-      <td>49.0</td>
+      <th>18</th>
+      <td>56.0</td>
       <td>male</td>
-      <td>37.510</td>
-      <td>2.0</td>
-      <td>False</td>
-      <td>southeast</td>
-      <td>9304.70190</td>
-    </tr>
-    <tr>
-      <th>872</th>
-      <td>42.0</td>
-      <td>male</td>
-      <td>24.860</td>
+      <td>40.300</td>
       <td>0.0</td>
-      <td>False</td>
-      <td>southeast</td>
-      <td>5966.88740</td>
-    </tr>
-    <tr>
-      <th>495</th>
-      <td>20.0</td>
-      <td>male</td>
-      <td>27.930</td>
-      <td>0.0</td>
-      <td>False</td>
-      <td>northeast</td>
-      <td>1967.02270</td>
-    </tr>
-    <tr>
-      <th>771</th>
-      <td>53.0</td>
-      <td>female</td>
-      <td>26.700</td>
-      <td>2.0</td>
       <td>False</td>
       <td>southwest</td>
-      <td>11150.78000</td>
+      <td>10602.38500</td>
     </tr>
     <tr>
-      <th>1234</th>
-      <td>45.0</td>
-      <td>female</td>
-      <td>27.830</td>
-      <td>2.0</td>
-      <td>False</td>
-      <td>southeast</td>
-      <td>8515.75870</td>
-    </tr>
-    <tr>
-      <th>749</th>
-      <td>28.0</td>
+      <th>1244</th>
+      <td>18.0</td>
       <td>male</td>
-      <td>30.875</td>
+      <td>33.330</td>
       <td>0.0</td>
       <td>False</td>
-      <td>northwest</td>
-      <td>3062.50825</td>
+      <td>southeast</td>
+      <td>1135.94070</td>
     </tr>
     <tr>
-      <th>230</th>
-      <td>42.0</td>
+      <th>1219</th>
+      <td>38.0</td>
       <td>female</td>
-      <td>36.195</td>
+      <td>30.210</td>
+      <td>3.0</td>
+      <td>False</td>
+      <td>northwest</td>
+      <td>7537.16390</td>
+    </tr>
+    <tr>
+      <th>1247</th>
+      <td>33.0</td>
+      <td>male</td>
+      <td>29.400</td>
+      <td>4.0</td>
+      <td>False</td>
+      <td>southwest</td>
+      <td>6059.17300</td>
+    </tr>
+    <tr>
+      <th>1153</th>
+      <td>35.0</td>
+      <td>female</td>
+      <td>35.815</td>
       <td>1.0</td>
       <td>False</td>
       <td>northwest</td>
-      <td>7443.64305</td>
+      <td>5630.45785</td>
     </tr>
     <tr>
-      <th>176</th>
-      <td>38.0</td>
+      <th>369</th>
+      <td>18.0</td>
       <td>male</td>
-      <td>27.835</td>
+      <td>30.400</td>
+      <td>3.0</td>
+      <td>False</td>
+      <td>northeast</td>
+      <td>3481.86800</td>
+    </tr>
+    <tr>
+      <th>1073</th>
+      <td>54.0</td>
+      <td>female</td>
+      <td>28.880</td>
       <td>2.0</td>
       <td>False</td>
-      <td>northwest</td>
-      <td>6455.86265</td>
+      <td>northeast</td>
+      <td>12096.65120</td>
+    </tr>
+    <tr>
+      <th>761</th>
+      <td>23.0</td>
+      <td>male</td>
+      <td>35.200</td>
+      <td>1.0</td>
+      <td>False</td>
+      <td>southwest</td>
+      <td>2416.95500</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>18.0</td>
+      <td>female</td>
+      <td>38.665</td>
+      <td>2.0</td>
+      <td>False</td>
+      <td>northeast</td>
+      <td>3393.35635</td>
     </tr>
   </tbody>
 </table>
@@ -1006,6 +1005,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 </div>
+</section>
 <section id="prepare-the-data-for-model-fitting">
 <h3>Prepare the data for model fitting<a class="headerlink" href="#prepare-the-data-for-model-fitting" title="Link to this heading">#</a></h3>
 <p>Before fitting any machine learning model, it’s essential to ensure that the dataset is properly prepared. This step involves transforming raw data into a clean and structured format that models can effectively interpret.</p>
@@ -1168,7 +1168,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2bd64ad6790&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x204581e3350&gt;
 </pre></div>
 </div>
 <img alt="_images/8dfc4c5891fa5d150fc9fc97c72a0ebd6f5083fbd43732a8d795509ae62a1bd8.png" src="_images/8dfc4c5891fa5d150fc9fc97c72a0ebd6f5083fbd43732a8d795509ae62a1bd8.png" />
@@ -1181,7 +1181,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2bd64b755d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2047f42ec10&gt;
 </pre></div>
 </div>
 <img alt="_images/c2103c383f3ccedd765d9056049cad2d401cc8fe6e7f192e775431572c0cc8b3.png" src="_images/c2103c383f3ccedd765d9056049cad2d401cc8fe6e7f192e775431572c0cc8b3.png" />
@@ -1194,7 +1194,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2bd648fa010&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2047f1c1810&gt;
 </pre></div>
 </div>
 <img alt="_images/bb6e6ec8e25cb2babb57e95112d783d0e1bf6f43471b0fd9ddb0ea8834d691ca.png" src="_images/bb6e6ec8e25cb2babb57e95112d783d0e1bf6f43471b0fd9ddb0ea8834d691ca.png" />
@@ -1207,7 +1207,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2bd64625010&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2047f378550&gt;
 </pre></div>
 </div>
 <img alt="_images/4930acb1053157f56caa2f78c3d087dd08fd513beb44d241e3ab58d62aa2b927.png" src="_images/4930acb1053157f56caa2f78c3d087dd08fd513beb44d241e3ab58d62aa2b927.png" />
@@ -1220,7 +1220,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2bd649b6790&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2047fcce610&gt;
 </pre></div>
 </div>
 <img alt="_images/091e6bbac269e26925b42473c34c4830ee48b1acfb910729bd26ee1165abb365.png" src="_images/091e6bbac269e26925b42473c34c4830ee48b1acfb910729bd26ee1165abb365.png" />
@@ -1233,7 +1233,7 @@ memory usage: 67.2+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2bd6546a010&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x2047fd2eb10&gt;
 </pre></div>
 </div>
 <img alt="_images/ad623ef8ce009d74d95ac6ccfc4ad543f6434ee36e1f17a1cc2b56f638260d69.png" src="_images/ad623ef8ce009d74d95ac6ccfc4ad543f6434ee36e1f17a1cc2b56f638260d69.png" />
@@ -1279,7 +1279,7 @@ memory usage: 67.2+ KB
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial test score
 Linear score:0.7049323160872817
-Forest score:0.8234897011546444
+Forest score:0.8238722682304687
 </pre></div>
 </div>
 </div>
@@ -1298,7 +1298,7 @@ Forest score:0.8234897011546444
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cross val score - Higher = better
 Linear score:0.7442527809757057
-Forest score:0.8368372883120603
+Forest score:0.8361389444014307
 </pre></div>
 </div>
 </div>
@@ -1317,7 +1317,7 @@ Forest score:0.8368372883120603
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r2 Score - Higher = better
 Linear score:0.7049323160872817
-Forest score:0.8234897011546444
+Forest score:0.8238722682304687
 </pre></div>
 </div>
 </div>
@@ -1335,7 +1335,7 @@ Forest score:0.8234897011546444
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Root Mean Squared Error - Lower = better
 Linear score:6319.54217986643
-Forest score:4887.759383359731
+Forest score:4882.459663950054
 </pre></div>
 </div>
 </div>
@@ -1353,7 +1353,7 @@ Forest score:4887.759383359731
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Absolute Error - Lower = better
 Linear score:4378.723562983686
-Forest score:2872.4634980558685
+Forest score:2851.7700536276448
 </pre></div>
 </div>
 </div>
@@ -1374,10 +1374,10 @@ Forest score:2872.4634980558685
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2bd6490d8d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2047f1f78d0&gt;
 </pre></div>
 </div>
-<img alt="_images/2d8d2125f9202878499deab49f5faa1ab0706222e1882c46acdbadba024a5a70.png" src="_images/2d8d2125f9202878499deab49f5faa1ab0706222e1882c46acdbadba024a5a70.png" />
+<img alt="_images/4964060af4ac35ad03dfcf3e3c0bd0cda148930bd7b7860ccf64e6d8a705fefc.png" src="_images/4964060af4ac35ad03dfcf3e3c0bd0cda148930bd7b7860ccf64e6d8a705fefc.png" />
 </div>
 </div>
 </section>
@@ -1436,7 +1436,7 @@ Forest score:2872.4634980558685
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/75db99408a5322467b6aa44a7c473fb181e542df2e4d87803dd35b730e1de872.png" src="_images/75db99408a5322467b6aa44a7c473fb181e542df2e4d87803dd35b730e1de872.png" />
+<img alt="_images/f4294cab1bfcab93aa48c7ce59cf22366853ccc66969c567a407cd58b498a3fb.png" src="_images/f4294cab1bfcab93aa48c7ce59cf22366853ccc66969c567a407cd58b498a3fb.png" />
 </div>
 </div>
 </section>
@@ -1572,12 +1572,8 @@ Forest score:2872.4634980558685
 <span class="g g-Whitespace">   </span><span class="mi">1472</span> <span class="p">):</span>
 <span class="ne">-&gt; </span><span class="mi">1473</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\ensemble\_forest.py:478,</span> in <span class="ni">BaseForest.fit</span><span class="nt">(self, X, y, sample_weight)</span>
-<span class="g g-Whitespace">    </span><span class="mi">473</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">warm_start</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">474</span>     <span class="c1"># We draw from the random state to get the random state we</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span>     <span class="c1"># would have got if we hadn&#39;t used a warm_start.</span>
-<span class="g g-Whitespace">    </span><span class="mi">476</span>     <span class="n">random_state</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">MAX_INT</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span><span class="p">))</span>
-<span class="ne">--&gt; </span><span class="mi">478</span> <span class="n">trees</span> <span class="o">=</span> <span class="p">[</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\ensemble\_forest.py:489,</span> in <span class="ni">BaseForest.fit</span><span class="nt">(self, X, y, sample_weight)</span>
+<span class="g g-Whitespace">    </span><span class="mi">478</span> <span class="n">trees</span> <span class="o">=</span> <span class="p">[</span>
 <span class="g g-Whitespace">    </span><span class="mi">479</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_make_estimator</span><span class="p">(</span><span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
 <span class="nn">    480     for i</span> in <span class="ni">range</span><span class="nt">(n_more_estimators)</span>
 <span class="g g-Whitespace">    </span><span class="mi">481</span> <span class="p">]</span>
@@ -1587,155 +1583,66 @@ Forest score:2872.4634980558685
 <span class="g g-Whitespace">    </span><span class="mi">486</span> <span class="c1"># that case. However, for joblib 0.12+ we respect any</span>
 <span class="g g-Whitespace">    </span><span class="mi">487</span> <span class="c1"># parallel_backend contexts set at a higher level,</span>
 <span class="g g-Whitespace">    </span><span class="mi">488</span> <span class="c1"># since correctness does not rely on using threads.</span>
-<span class="g g-Whitespace">    </span><span class="mi">489</span> <span class="n">trees</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">489</span> <span class="n">trees</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">490</span>     <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">verbose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span>     <span class="n">prefer</span><span class="o">=</span><span class="s2">&quot;threads&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span> <span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_parallel_build_trees</span><span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>         <span class="n">t</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="bp">self</span><span class="o">.</span><span class="n">bootstrap</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">497</span>         <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">498</span>         <span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span>         <span class="n">sample_weight</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">500</span>         <span class="n">i</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span>         <span class="nb">len</span><span class="p">(</span><span class="n">trees</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span>         <span class="n">verbose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span>         <span class="n">class_weight</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">class_weight</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>         <span class="n">n_samples_bootstrap</span><span class="o">=</span><span class="n">n_samples_bootstrap</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span>         <span class="n">missing_values_in_feature_mask</span><span class="o">=</span><span class="n">missing_values_in_feature_mask</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span>     <span class="p">)</span>
 <span class="nn">    507     for i, t</span> in <span class="ni">enumerate</span><span class="nt">(trees)</span>
 <span class="g g-Whitespace">    </span><span class="mi">508</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span> <span class="c1"># Collect newly grown trees</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">trees</span><span class="p">)</span>
 
-<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\ensemble\_forest.py:479,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">473</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">warm_start</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">474</span>     <span class="c1"># We draw from the random state to get the random state we</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span>     <span class="c1"># would have got if we hadn&#39;t used a warm_start.</span>
-<span class="g g-Whitespace">    </span><span class="mi">476</span>     <span class="n">random_state</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">MAX_INT</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators_</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">478</span> <span class="n">trees</span> <span class="o">=</span> <span class="p">[</span>
-<span class="ne">--&gt; </span><span class="mi">479</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_make_estimator</span><span class="p">(</span><span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
-<span class="nn">    480     for i</span> in <span class="ni">range</span><span class="nt">(n_more_estimators)</span>
-<span class="g g-Whitespace">    </span><span class="mi">481</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span> <span class="c1"># Parallel loop: we prefer the threading backend as the Cython code</span>
-<span class="g g-Whitespace">    </span><span class="mi">484</span> <span class="c1"># for fitting the trees is internally releasing the Python GIL</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span> <span class="c1"># making threading more efficient than multiprocessing in</span>
-<span class="g g-Whitespace">    </span><span class="mi">486</span> <span class="c1"># that case. However, for joblib 0.12+ we respect any</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span> <span class="c1"># parallel_backend contexts set at a higher level,</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span> <span class="c1"># since correctness does not rely on using threads.</span>
-<span class="g g-Whitespace">    </span><span class="mi">489</span> <span class="n">trees</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span>     <span class="n">n_jobs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_jobs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">verbose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="nn">    507     for i, t</span> in <span class="ni">enumerate</span><span class="nt">(trees)</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span> <span class="p">)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\utils\parallel.py:74,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span> <span class="n">iterable_with_config</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="p">(</span><span class="n">_with_config</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">),</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">74</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config</span><span class="p">)</span>
 
-<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\ensemble\_base.py:145,</span> in <span class="ni">BaseEnsemble._make_estimator</span><span class="nt">(self, append, random_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="k">def</span> <span class="nf">_make_estimator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Make and configure a copy of the `estimator_` attribute.</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span><span class="sd">     Warning: This method should be used to properly instantiate new</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span><span class="sd">     sub-estimators.</span>
-<span class="g g-Whitespace">    </span><span class="mi">144</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">145</span>     <span class="n">estimator</span> <span class="o">=</span> <span class="n">clone</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator_</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">set_params</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">p</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimator_params</span><span class="p">})</span>
-<span class="g g-Whitespace">    </span><span class="mi">148</span>     <span class="k">if</span> <span class="n">random_state</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\joblib\parallel.py:2007,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2001</span> <span class="c1"># The first item from the output is blank, but it makes the interpreter</span>
+<span class="g g-Whitespace">   </span><span class="mi">2002</span> <span class="c1"># progress until it enters the Try/Except block of the generator and</span>
+<span class="g g-Whitespace">   </span><span class="mi">2003</span> <span class="c1"># reaches the first `yield` statement. This starts the asynchronous</span>
+<span class="g g-Whitespace">   </span><span class="mi">2004</span> <span class="c1"># dispatch of the tasks to the workers.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2005</span> <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2007</span> <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 
-<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\base.py:90,</span> in <span class="ni">clone</span><span class="nt">(estimator, safe)</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Construct a new unfitted estimator with the same parameters.</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span><span class="sd"> Clone does a deep copy of the model in an estimator</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span><span class="sd"> False</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">89</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="s2">&quot;__sklearn_clone__&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isclass</span><span class="p">(</span><span class="n">estimator</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">90</span>     <span class="k">return</span> <span class="n">estimator</span><span class="o">.</span><span class="n">__sklearn_clone__</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span> <span class="k">return</span> <span class="n">_clone_parametrized</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">safe</span><span class="o">=</span><span class="n">safe</span><span class="p">)</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\joblib\parallel.py:1650,</span> in <span class="ni">Parallel._get_outputs</span><span class="nt">(self, iterator, pre_dispatch)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1647</span>     <span class="k">yield</span>
+<span class="g g-Whitespace">   </span><span class="mi">1649</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">retrieval_context</span><span class="p">():</span>
+<span class="ne">-&gt; </span><span class="mi">1650</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_retrieve</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1652</span> <span class="k">except</span> <span class="ne">GeneratorExit</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1653</span>     <span class="c1"># The generator has been garbage collected before being fully</span>
+<span class="g g-Whitespace">   </span><span class="mi">1654</span>     <span class="c1"># consumed. This aborts the remaining tasks if possible and warn</span>
+<span class="g g-Whitespace">   </span><span class="mi">1655</span>     <span class="c1"># the user if necessary.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1656</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\base.py:296,</span> in <span class="ni">BaseEstimator.__sklearn_clone__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span> <span class="k">def</span> <span class="nf">__sklearn_clone__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">296</span>     <span class="k">return</span> <span class="n">_clone_parametrized</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\base.py:121,</span> in <span class="ni">_clone_parametrized</span><span class="nt">(estimator, safe)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>                 <span class="s2">&quot;Cannot clone object &#39;</span><span class="si">%s</span><span class="s2">&#39; (type </span><span class="si">%s</span><span class="s2">): &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>                 <span class="s2">&quot;it does not seem to be a scikit-learn &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span>                 <span class="s2">&quot;estimator as it does not implement a &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span>                 <span class="s2">&quot;&#39;get_params&#39; method.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">estimator</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">estimator</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span> <span class="n">klass</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="vm">__class__</span>
-<span class="ne">--&gt; </span><span class="mi">121</span> <span class="n">new_object_params</span> <span class="o">=</span> <span class="n">estimator</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">new_object_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="n">new_object_params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">clone</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">safe</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\base.py:243,</span> in <span class="ni">BaseEstimator.get_params</span><span class="nt">(self, deep)</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">229</span><span class="sd"> Get parameters for this estimator.</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span><span class="sd">     Parameter names mapped to their values.</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span> <span class="n">out</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">243</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_param_names</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">244</span>     <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span>     <span class="k">if</span> <span class="n">deep</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">&quot;get_params&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-
-<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\sklearn\base.py:208,</span> in <span class="ni">BaseEstimator._get_param_names</span><span class="nt">(cls)</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span>     <span class="k">return</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="c1"># introspect the constructor arguments to find the model parameters</span>
-<span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="c1"># to represent</span>
-<span class="ne">--&gt; </span><span class="mi">208</span> <span class="n">init_signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">init</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span> <span class="c1"># Consider the constructor parameters excluding &#39;self&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="n">parameters</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">211</span>     <span class="n">p</span>
-<span class="nn">    212     for p</span> in <span class="ni">init_signature.parameters.values</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s2">&quot;self&quot;</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">kind</span> <span class="o">!=</span> <span class="n">p</span><span class="o">.</span><span class="n">VAR_KEYWORD</span>
-<span class="g g-Whitespace">    </span><span class="mi">214</span> <span class="p">]</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:3272,</span> in <span class="ni">signature</span><span class="nt">(obj, follow_wrapped, globals, locals, eval_str)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3270</span> <span class="k">def</span> <span class="nf">signature</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">follow_wrapped</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">globals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eval_str</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">3271</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Get a signature object for the passed callable.&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">3272</span>     <span class="k">return</span> <span class="n">Signature</span><span class="o">.</span><span class="n">from_callable</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">follow_wrapped</span><span class="o">=</span><span class="n">follow_wrapped</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3273</span>                                    <span class="nb">globals</span><span class="o">=</span><span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="nb">locals</span><span class="p">,</span> <span class="n">eval_str</span><span class="o">=</span><span class="n">eval_str</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:3020,</span> in <span class="ni">Signature.from_callable</span><span class="nt">(cls, obj, follow_wrapped, globals, locals, eval_str)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3016</span> <span class="nd">@classmethod</span>
-<span class="g g-Whitespace">   </span><span class="mi">3017</span> <span class="k">def</span> <span class="nf">from_callable</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3018</span>                   <span class="n">follow_wrapped</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">globals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eval_str</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">3019</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Constructs Signature for the given callable object.&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">3020</span>     <span class="k">return</span> <span class="n">_signature_from_callable</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">sigcls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3021</span>                                     <span class="n">follow_wrapper_chains</span><span class="o">=</span><span class="n">follow_wrapped</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">3022</span>                                     <span class="nb">globals</span><span class="o">=</span><span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="nb">locals</span><span class="p">,</span> <span class="n">eval_str</span><span class="o">=</span><span class="n">eval_str</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:2507,</span> in <span class="ni">_signature_from_callable</span><span class="nt">(obj, follow_wrapper_chains, skip_bound_arg, globals, locals, eval_str, sigcls)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2502</span>             <span class="k">return</span> <span class="n">sig</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">parameters</span><span class="o">=</span><span class="n">new_params</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2504</span> <span class="k">if</span> <span class="n">isfunction</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_signature_is_functionlike</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">2505</span>     <span class="c1"># If it&#39;s a pure Python function, or an object that is duck type</span>
-<span class="g g-Whitespace">   </span><span class="mi">2506</span>     <span class="c1"># of a Python function (Cython functions, for instance), then:</span>
-<span class="ne">-&gt; </span><span class="mi">2507</span>     <span class="k">return</span> <span class="n">_signature_from_function</span><span class="p">(</span><span class="n">sigcls</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2508</span>                                     <span class="n">skip_bound_arg</span><span class="o">=</span><span class="n">skip_bound_arg</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2509</span>                                     <span class="nb">globals</span><span class="o">=</span><span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="nb">locals</span><span class="p">,</span> <span class="n">eval_str</span><span class="o">=</span><span class="n">eval_str</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2511</span> <span class="k">if</span> <span class="n">_signature_is_builtin</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">2512</span>     <span class="k">return</span> <span class="n">_signature_from_builtin</span><span class="p">(</span><span class="n">sigcls</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2513</span>                                    <span class="n">skip_bound_arg</span><span class="o">=</span><span class="n">skip_bound_arg</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:2417,</span> in <span class="ni">_signature_from_function</span><span class="nt">(cls, func, skip_bound_arg, globals, locals, eval_str)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2412</span>     <span class="n">parameters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Parameter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2413</span>                                 <span class="n">kind</span><span class="o">=</span><span class="n">_VAR_KEYWORD</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">2415</span> <span class="c1"># Is &#39;func&#39; is a pure Python function - don&#39;t validate the</span>
-<span class="g g-Whitespace">   </span><span class="mi">2416</span> <span class="c1"># parameters list (for correct order and defaults), it should be OK.</span>
-<span class="ne">-&gt; </span><span class="mi">2417</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">parameters</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2418</span>            <span class="n">return_annotation</span><span class="o">=</span><span class="n">annotations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;return&#39;</span><span class="p">,</span> <span class="n">_empty</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">2419</span>            <span class="n">__validate_parameters__</span><span class="o">=</span><span class="n">is_duck_function</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:3011,</span> in <span class="ni">Signature.__init__</span><span class="nt">(self, parameters, return_annotation, __validate_parameters__)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3009</span>             <span class="n">params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">param</span>
-<span class="g g-Whitespace">   </span><span class="mi">3010</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">3011</span>         <span class="n">params</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">((</span><span class="n">param</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3013</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">MappingProxyType</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3014</span> <span class="bp">self</span><span class="o">.</span><span class="n">_return_annotation</span> <span class="o">=</span> <span class="n">return_annotation</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:3011,</span> in <span class="ni">&lt;genexpr&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3009</span>             <span class="n">params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">param</span>
-<span class="g g-Whitespace">   </span><span class="mi">3010</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">3011</span>         <span class="n">params</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">((</span><span class="n">param</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3013</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">MappingProxyType</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3014</span> <span class="bp">self</span><span class="o">.</span><span class="n">_return_annotation</span> <span class="o">=</span> <span class="n">return_annotation</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python311\Lib\inspect.py:2729,</span> in <span class="ni">Parameter.name</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2726</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_default</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s1">&#39;_default&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">2727</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_annotation</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s1">&#39;_annotation&#39;</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">2729</span> <span class="nd">@property</span>
-<span class="g g-Whitespace">   </span><span class="mi">2730</span> <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">2731</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
-<span class="g g-Whitespace">   </span><span class="mi">2733</span> <span class="nd">@property</span>
-<span class="g g-Whitespace">   </span><span class="mi">2734</span> <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="nn">File ~\AppData\Local\pypoetry\Cache\virtualenvs\healthcare-regression-jPCn2AX--py3.11\Lib\site-packages\joblib\parallel.py:1762,</span> in <span class="ni">Parallel._retrieve</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1757</span> <span class="c1"># If the next job is not ready for retrieval yet, we just wait for</span>
+<span class="g g-Whitespace">   </span><span class="mi">1758</span> <span class="c1"># async callbacks to progress.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1759</span> <span class="k">if</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span>
+<span class="g g-Whitespace">   </span><span class="mi">1760</span>     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1761</span>         <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span> <span class="o">==</span> <span class="n">TASK_PENDING</span><span class="p">)):</span>
+<span class="ne">-&gt; </span><span class="mi">1762</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1763</span>     <span class="k">continue</span>
+<span class="g g-Whitespace">   </span><span class="mi">1765</span> <span class="c1"># We need to be careful: the job list can be filling up as</span>
+<span class="g g-Whitespace">   </span><span class="mi">1766</span> <span class="c1"># we empty it and Python list are not thread-safe by</span>
+<span class="g g-Whitespace">   </span><span class="mi">1767</span> <span class="c1"># default hence the use of the lock</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -2189,9 +2096,9 @@ New model score:2843.7224081888435
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-insurance-csv">Dataset: insurance.csv</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data"><strong>Preparing the data</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">Data Exploration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data"><strong>Preparing the data</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-exploration">Data Exploration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-data-for-model-fitting">Prepare the data for model fitting</a></li>
 </ul>
 </li>
