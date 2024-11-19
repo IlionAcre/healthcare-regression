@@ -4,11 +4,15 @@
 format: jb-book
 root: healthcare_regression
 parts:
+  - caption: Predicting Insurance Costs With Regression Models
+    chapters:
+      - file: Predicting-Insurance-Costs-With-Regression-Models
+
   - caption: The database
     chapters:
       - file: healthcare_regression#dataset:-insurance.csv
-      
-  - caption: Preparing the Data
+
+  - caption: Preparing the data
     chapters:    
       - file: healthcare_regression#preparing-the-data
         sections:
@@ -16,14 +20,14 @@ parts:
           - file: healthcare_regression#data-cleaning
           - file: healthcare_regression#prepare-the-data-for-model-fitting
 
-  - caption: Model Exploration and Training
+  - caption: Model exploration and training
     chapters:    
       - file: healthcare_regression#discovering-the-relationships
       - file: healthcare_regression#training-the-model
       - file: healthcare_regression#comparing-the-performance
       - file: healthcare_regression#unveiling-the-feature-importances
 
-  - caption: Model Tuning and Implementation
+  - caption: Model tuning and implementation
     chapters:    
       - file: healthcare_regression#model-tuning
         sections:
