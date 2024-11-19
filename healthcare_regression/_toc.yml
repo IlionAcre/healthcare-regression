@@ -4,4 +4,18 @@
 format: jb-book
 root: intro
 chapters:
-- file: healthcare_regression
+  - file: healthcare_regression.ipynb
+    sections:
+      - file: intro#Predicting-Insurance-Costs-A-Data-Science-Project
+      - file: intro#Step-1-Data-Cleaning
+        sections:
+          - file: intro#Prepare-the-data-for-model-fitting
+      - file: intro#Observe-relationships
+      - file: intro#Train-and-compare-models
+        sections:
+          - file: intro#Performance-comparison
+          - file: intro#Feature-importances-comparison
+      - file: intro#Model-tuning
+      - file: intro#Model-implementation
+      - file: intro#Conclusion-and-Closing
+
