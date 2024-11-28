@@ -13,7 +13,7 @@ This project explores **health insurance cost prediction** by comparing two regr
 - Model evaluation
 - Generating insights from the results
 
-This notebook is ideal for those interested in learning about **regression techniques** and how machine learning can be applied to real-world problems.
+[This notebook](https://projects.falcontreras.com/healthcare_regression.html) is ideal for those interested in learning about **regression techniques** and how machine learning can be applied to real-world problems.
 
 ---
 
